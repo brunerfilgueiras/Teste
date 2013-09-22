@@ -52,7 +52,7 @@ public class SaidaView extends javax.swing.JFrame {
         jbConsultar = new javax.swing.JButton();
         jbAlterar = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setText("Número:");
 
@@ -224,6 +224,7 @@ public class SaidaView extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     /**

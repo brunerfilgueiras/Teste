@@ -38,7 +38,7 @@ public class MecanicoView extends javax.swing.JFrame {
         jbConsultar = new javax.swing.JButton();
         jbSalvar = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel3.setText("Posto / Graduação:");
 
