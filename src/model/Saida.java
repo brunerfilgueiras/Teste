@@ -19,7 +19,16 @@ public class Saida  implements java.io.Serializable {
      private Date data;
      private String observacoes;
      private Set itensSaidas = new HashSet(0);
-
+     static Saida instancia = null;   
+   
+     
+     public static Saida getInstacia(){
+       if(  instancia == null){
+         return instancia = new Saida();
+         } else{ 
+         return instancia;
+       }
+     }
     public Saida() {
     }
 

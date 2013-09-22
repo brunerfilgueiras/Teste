@@ -24,7 +24,16 @@ public class Fornecedor  implements java.io.Serializable {
      private String estado;
      private String contato;
      private Set empenhos = new HashSet(0);
-
+     static Fornecedor instancia = null;   
+   
+     
+     public static Fornecedor getInstacia(){
+       if(  instancia == null){
+         return instancia = new Fornecedor();
+         } else{ 
+         return instancia;
+       }
+     }
     public Fornecedor() {
     }
 

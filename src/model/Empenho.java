@@ -19,8 +19,18 @@ public class Empenho  implements java.io.Serializable {
      private float saldo;
      private float valor;
      private Set entradas = new HashSet(0);
-
-    public Empenho() {
+     static Empenho instancia = null;   
+   
+     
+     public static Empenho getInstacia(){
+       if(  instancia == null){
+         return instancia = new Empenho();
+         } else{ 
+         return instancia;
+       }
+     }
+     
+     public Empenho() {
     }
 
 	

@@ -16,7 +16,17 @@ public class Mecanico  implements java.io.Serializable {
      private String nomeGuerra;
      private String nomeCompleto;
      private Set saidas = new HashSet(0);
-
+     static Mecanico instancia = null;   
+   
+     
+     public static Mecanico getInstacia(){
+       if(  instancia == null){
+         return instancia = new Mecanico();
+         } else{ 
+         return instancia;
+       }
+     }
+     
     public Mecanico() {
     }
 

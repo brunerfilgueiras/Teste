@@ -14,7 +14,16 @@ public class ItensEntrada  implements java.io.Serializable {
      private Produto produto;
      private float valor;
      private int quantidade;
-
+     static ItensEntrada instancia = null;   
+   
+     
+     public static ItensEntrada getInstacia(){
+       if(  instancia == null){
+         return instancia = new ItensEntrada();
+         } else{ 
+         return instancia;
+       }
+     }
     public ItensEntrada() {
     }
 

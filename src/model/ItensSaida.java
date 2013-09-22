@@ -13,7 +13,16 @@ public class ItensSaida  implements java.io.Serializable {
      private Saida saida;
      private Produto produto;
      private int quantidade;
-
+     static ItensSaida instancia = null;   
+   
+     
+     public static ItensSaida getInstacia(){
+       if(  instancia == null){
+         return instancia = new ItensSaida();
+         } else{ 
+         return instancia;
+       }
+     }
     public ItensSaida() {
     }
 

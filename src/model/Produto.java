@@ -20,7 +20,16 @@ public class Produto  implements java.io.Serializable {
      private float valor;
      private Set itensEntradas = new HashSet(0);
      private Set itensSaidas = new HashSet(0);
-
+     static Produto instancia = null;   
+   
+     
+     public static Produto getInstacia(){
+       if(  instancia == null){
+         return instancia = new Produto();
+         } else{ 
+         return instancia;
+       }
+     }
     public Produto() {
     }
 

@@ -19,7 +19,18 @@ public class Entrada  implements java.io.Serializable {
      private Date data;
      private float valorTotal;
      private Set itensEntradas = new HashSet(0);
-
+     static Entrada instancia = null;   
+   
+     
+     public static Entrada getInstacia(){
+       if(  instancia == null){
+         return instancia = new Entrada();
+         } else{ 
+         return instancia;
+       }
+     }
+     
+     
     public Entrada() {
     }
 

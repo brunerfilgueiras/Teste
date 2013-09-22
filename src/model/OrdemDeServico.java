@@ -20,7 +20,16 @@ public class OrdemDeServico  implements java.io.Serializable {
      private String viatura;
      private String om;
      private Set saidas = new HashSet(0);
-
+     static OrdemDeServico instancia = null;   
+   
+     
+     public static OrdemDeServico getInstacia(){
+       if(  instancia == null){
+         return instancia = new OrdemDeServico();
+         } else{ 
+         return instancia;
+       }
+     }
     public OrdemDeServico() {
     }
 

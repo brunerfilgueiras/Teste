@@ -14,7 +14,16 @@ public class Montadora  implements java.io.Serializable {
      private Long id;
      private String nome;
      private Set produtos = new HashSet(0);
-
+     static Montadora instancia = null;   
+   
+     
+     public static Montadora getInstacia(){
+       if(  instancia == null){
+         return instancia = new Montadora();
+         } else{ 
+         return instancia;
+       }
+     }
     public Montadora() {
     }
 

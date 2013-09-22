@@ -20,7 +20,16 @@ public class Usuario  implements java.io.Serializable {
      private String nomeGuerra;
      private Set saidas = new HashSet(0);
      private Set entradas = new HashSet(0);
-
+     static Usuario instancia = null;   
+   
+     
+     public static Usuario getInstacia(){
+       if(  instancia == null){
+         return instancia = new Usuario();
+         } else{ 
+         return instancia;
+       }
+     }
     public Usuario() {
     }
 
