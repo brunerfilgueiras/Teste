@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 22/09/2013 15:07:10 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="model.ItensEntrada" table="itens_entrada" catalog="srm">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="entrada" class="model.Entrada" fetch="select">
+            <column name="id_entrada" not-null="true" />
+        </many-to-one>
+        <many-to-one name="produto" class="model.Produto" fetch="select">
+            <column name="id_produto" not-null="true" />
+        </many-to-one>
+        <property name="valor" type="float">
+            <column name="valor" precision="12" scale="0" not-null="true" />
+        </property>
+        <property name="quantidade" type="int">
+            <column name="quantidade" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

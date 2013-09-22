@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 22/09/2013 15:07:10 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="model.Mecanico" table="mecanico" catalog="srm">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="posto" type="string">
+            <column name="posto" length="10" not-null="true" />
+        </property>
+        <property name="nomeGuerra" type="string">
+            <column name="nome_guerra" length="20" not-null="true" />
+        </property>
+        <property name="nomeCompleto" type="string">
+            <column name="nome_completo" length="150" not-null="true" />
+        </property>
+        <set name="saidas" inverse="true">
+            <key>
+                <column name="id_mecanico" not-null="true" />
+            </key>
+            <one-to-many class="model.Saida" />
+        </set>
+    </class>
+</hibernate-mapping>

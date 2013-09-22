@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 22/09/2013 15:07:10 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="model.OrdemDeServico" table="ordem_de_servico" catalog="srm">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="dataSaida" type="date">
+            <column name="data_saida" length="10" not-null="true" />
+        </property>
+        <property name="ebPlaca" type="string">
+            <column name="eb_placa" length="20" not-null="true" />
+        </property>
+        <property name="dataEntrada" type="date">
+            <column name="data_entrada" length="10" not-null="true" />
+        </property>
+        <property name="observacoes" type="string">
+            <column name="observacoes" length="256" />
+        </property>
+        <property name="viatura" type="string">
+            <column name="viatura" length="20" not-null="true" />
+        </property>
+        <property name="om" type="string">
+            <column name="om" length="10" not-null="true" />
+        </property>
+        <set name="saidas" inverse="true">
+            <key>
+                <column name="id_ordem_de_servico" not-null="true" />
+            </key>
+            <one-to-many class="model.Saida" />
+        </set>
+    </class>
+</hibernate-mapping>
