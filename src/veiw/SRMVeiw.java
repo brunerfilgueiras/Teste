@@ -28,16 +28,16 @@ public class SRMVeiw extends javax.swing.JFrame {
 
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
-        openMenuItem = new javax.swing.JMenuItem();
-        saveMenuItem = new javax.swing.JMenuItem();
-        saveAsMenuItem = new javax.swing.JMenuItem();
+        miEntrada = new javax.swing.JMenuItem();
+        miSaida = new javax.swing.JMenuItem();
+        miOrdemDeServico = new javax.swing.JMenuItem();
         editMenu = new javax.swing.JMenu();
-        pasteMenuItem = new javax.swing.JMenuItem();
-        deleteMenuItem = new javax.swing.JMenuItem();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        copyMenuItem = new javax.swing.JMenuItem();
-        cutMenuItem = new javax.swing.JMenuItem();
+        miEmpenho = new javax.swing.JMenuItem();
+        miFornecedor = new javax.swing.JMenuItem();
+        miMecanico = new javax.swing.JMenuItem();
+        miMontadora = new javax.swing.JMenuItem();
+        miProduto = new javax.swing.JMenuItem();
+        miUsuario = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem13 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
@@ -63,59 +63,84 @@ public class SRMVeiw extends javax.swing.JFrame {
         fileMenu.setMnemonic('f');
         fileMenu.setText("Movimentação");
 
-        openMenuItem.setMnemonic('e');
-        openMenuItem.setText("Entrada");
-        openMenuItem.addActionListener(new java.awt.event.ActionListener() {
+        miEntrada.setMnemonic('e');
+        miEntrada.setText("Entrada");
+        miEntrada.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                openMenuItemActionPerformed(evt);
+                miEntradaActionPerformed(evt);
             }
         });
-        fileMenu.add(openMenuItem);
+        fileMenu.add(miEntrada);
 
-        saveMenuItem.setMnemonic('s');
-        saveMenuItem.setText("Saída");
-        saveMenuItem.addActionListener(new java.awt.event.ActionListener() {
+        miSaida.setMnemonic('s');
+        miSaida.setText("Saída");
+        miSaida.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                saveMenuItemActionPerformed(evt);
+                miSaidaActionPerformed(evt);
             }
         });
-        fileMenu.add(saveMenuItem);
+        fileMenu.add(miSaida);
 
-        saveAsMenuItem.setMnemonic('o');
-        saveAsMenuItem.setText("Ordem de Serviço");
-        saveAsMenuItem.addActionListener(new java.awt.event.ActionListener() {
+        miOrdemDeServico.setMnemonic('o');
+        miOrdemDeServico.setText("Ordem de Serviço");
+        miOrdemDeServico.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                saveAsMenuItemActionPerformed(evt);
+                miOrdemDeServicoActionPerformed(evt);
             }
         });
-        fileMenu.add(saveAsMenuItem);
+        fileMenu.add(miOrdemDeServico);
 
         menuBar.add(fileMenu);
 
         editMenu.setMnemonic('e');
         editMenu.setText("Cadastro");
 
-        pasteMenuItem.setMnemonic('p');
-        pasteMenuItem.setText("Empenho");
-        editMenu.add(pasteMenuItem);
+        miEmpenho.setMnemonic('p');
+        miEmpenho.setText("Empenho");
+        miEmpenho.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miEmpenhoActionPerformed(evt);
+            }
+        });
+        editMenu.add(miEmpenho);
 
-        deleteMenuItem.setMnemonic('d');
-        deleteMenuItem.setText("Fornecedor");
-        editMenu.add(deleteMenuItem);
+        miFornecedor.setMnemonic('d');
+        miFornecedor.setText("Fornecedor");
+        miFornecedor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miFornecedorActionPerformed(evt);
+            }
+        });
+        editMenu.add(miFornecedor);
 
-        jMenuItem1.setText("Mecânico");
-        editMenu.add(jMenuItem1);
+        miMecanico.setText("Mecânico");
+        miMecanico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miMecanicoActionPerformed(evt);
+            }
+        });
+        editMenu.add(miMecanico);
 
-        jMenuItem2.setText("Montadora");
-        editMenu.add(jMenuItem2);
+        miMontadora.setText("Montadora");
+        miMontadora.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miMontadoraActionPerformed(evt);
+            }
+        });
+        editMenu.add(miMontadora);
 
-        copyMenuItem.setMnemonic('y');
-        copyMenuItem.setText("Produto");
-        editMenu.add(copyMenuItem);
+        miProduto.setMnemonic('y');
+        miProduto.setText("Produto");
+        miProduto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miProdutoActionPerformed(evt);
+            }
+        });
+        editMenu.add(miProduto);
 
-        cutMenuItem.setMnemonic('t');
-        cutMenuItem.setText("Usuário");
-        editMenu.add(cutMenuItem);
+        miUsuario.setMnemonic('t');
+        miUsuario.setText("Usuário");
+        editMenu.add(miUsuario);
 
         menuBar.add(editMenu);
 
@@ -192,22 +217,47 @@ public class SRMVeiw extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void openMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openMenuItemActionPerformed
+    private void miEntradaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miEntradaActionPerformed
 EntradaView janelaEntrada = new EntradaView();
 janelaEntrada.setVisible(true);
         // TODO add your handling code here:
-    }//GEN-LAST:event_openMenuItemActionPerformed
+    }//GEN-LAST:event_miEntradaActionPerformed
 
-    private void saveMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveMenuItemActionPerformed
+    private void miSaidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miSaidaActionPerformed
 SaidaView janelaSaida = new SaidaView();
 janelaSaida.setVisible(true);
 // TODO add your handling code here:
-    }//GEN-LAST:event_saveMenuItemActionPerformed
+    }//GEN-LAST:event_miSaidaActionPerformed
 
-    private void saveAsMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveAsMenuItemActionPerformed
+    private void miOrdemDeServicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miOrdemDeServicoActionPerformed
 OrdemDeServicoView janelaOrdemDeServico = new OrdemDeServicoView();
 janelaOrdemDeServico.setVisible(true);// TODO add your handling code here:
-    }//GEN-LAST:event_saveAsMenuItemActionPerformed
+    }//GEN-LAST:event_miOrdemDeServicoActionPerformed
+
+    private void miEmpenhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miEmpenhoActionPerformed
+EmpenhoView janelaEmpenho = new EmpenhoView();
+janelaEmpenho.setVisible(true);// TODO add your handling code here:
+    }//GEN-LAST:event_miEmpenhoActionPerformed
+
+    private void miProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miProdutoActionPerformed
+      ProdutoView janelaProduto = new ProdutoView();
+      janelaProduto.setVisible(true);
+    }//GEN-LAST:event_miProdutoActionPerformed
+
+    private void miFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miFornecedorActionPerformed
+FornecedorView janelaFornecedor = new FornecedorView();
+janelaFornecedor.setVisible(true);
+    }//GEN-LAST:event_miFornecedorActionPerformed
+
+    private void miMecanicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miMecanicoActionPerformed
+MecanicoView janelaMecanico = new MecanicoView();
+janelaMecanico.setVisible(true);// TODO add your handling code here:
+    }//GEN-LAST:event_miMecanicoActionPerformed
+
+    private void miMontadoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miMontadoraActionPerformed
+  MontadoraView janelaMontadora = new MontadoraView();
+  janelaMontadora.setVisible(true);// TODO addm your handling code here:
+    }//GEN-LAST:event_miMontadoraActionPerformed
 
     /**
      * @param args the command line arguments
@@ -246,21 +296,16 @@ janelaOrdemDeServico.setVisible(true);// TODO add your handling code here:
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem aboutMenuItem;
     private javax.swing.JMenuItem contentsMenuItem;
-    private javax.swing.JMenuItem copyMenuItem;
-    private javax.swing.JMenuItem cutMenuItem;
-    private javax.swing.JMenuItem deleteMenuItem;
     private javax.swing.JMenu editMenu;
     private javax.swing.JMenu fileMenu;
     private javax.swing.JMenu helpMenu;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem12;
     private javax.swing.JMenuItem jMenuItem13;
     private javax.swing.JMenuItem jMenuItem14;
     private javax.swing.JMenuItem jMenuItem15;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
@@ -269,9 +314,14 @@ janelaOrdemDeServico.setVisible(true);// TODO add your handling code here:
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JMenuBar menuBar;
-    private javax.swing.JMenuItem openMenuItem;
-    private javax.swing.JMenuItem pasteMenuItem;
-    private javax.swing.JMenuItem saveAsMenuItem;
-    private javax.swing.JMenuItem saveMenuItem;
+    private javax.swing.JMenuItem miEmpenho;
+    private javax.swing.JMenuItem miEntrada;
+    private javax.swing.JMenuItem miFornecedor;
+    private javax.swing.JMenuItem miMecanico;
+    private javax.swing.JMenuItem miMontadora;
+    private javax.swing.JMenuItem miOrdemDeServico;
+    private javax.swing.JMenuItem miProduto;
+    private javax.swing.JMenuItem miSaida;
+    private javax.swing.JMenuItem miUsuario;
     // End of variables declaration//GEN-END:variables
 }
