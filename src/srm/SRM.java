@@ -4,6 +4,8 @@
  */
 package srm;
 
+import veiw.SRMView;
+
 /**
  *
  * @author secinfor-04
@@ -14,6 +16,10 @@ public class SRM {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+     
+        SRMView janelaPrincipal = new SRMView();
+        janelaPrincipal.setVisible(true);
+        
         // TODO code application logic here
     }
 }
