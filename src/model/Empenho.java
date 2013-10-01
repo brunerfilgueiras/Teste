@@ -3,7 +3,6 @@ package model;
 
 
 import java.util.Date;
-import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -18,7 +17,7 @@ public class Empenho  implements java.io.Serializable {
      private Date data;
      private float saldo;
      private float valor;
-     private Set entradas = new HashSet(0);
+    
      static Empenho instancia = null;   
    
      
@@ -47,7 +46,7 @@ public class Empenho  implements java.io.Serializable {
        this.data = data;
        this.saldo = saldo;
        this.valor = valor;
-       this.entradas = entradas;
+       
     }
    
     public Long getId() {
@@ -91,13 +90,6 @@ public class Empenho  implements java.io.Serializable {
     
     public void setValor(float valor) {
         this.valor = valor;
-    }
-    public Set getEntradas() {
-        return this.entradas;
-    }
-    
-    public void setEntradas(Set entradas) {
-        this.entradas = entradas;
     }
 
 
