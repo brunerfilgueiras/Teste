@@ -18,7 +18,6 @@ public class Saida  implements java.io.Serializable {
      private OrdemDeServico ordemDeServico;
      private Date data;
      private String observacoes;
-     private Set itensSaidas = new HashSet(0);
      static Saida instancia = null;   
    
      
@@ -39,13 +38,13 @@ public class Saida  implements java.io.Serializable {
         this.ordemDeServico = ordemDeServico;
         this.data = data;
     }
-    public Saida(Usuario usuario, Mecanico mecanico, OrdemDeServico ordemDeServico, Date data, String observacoes, Set itensSaidas) {
+    public Saida(Usuario usuario, Mecanico mecanico, OrdemDeServico ordemDeServico, Date data, String observacoes) {
        this.usuario = usuario;
        this.mecanico = mecanico;
        this.ordemDeServico = ordemDeServico;
        this.data = data;
        this.observacoes = observacoes;
-       this.itensSaidas = itensSaidas;
+      
     }
    
     public Long getId() {
@@ -90,17 +89,7 @@ public class Saida  implements java.io.Serializable {
     public void setObservacoes(String observacoes) {
         this.observacoes = observacoes;
     }
-    public Set getItensSaidas() {
-        return this.itensSaidas;
-    }
-    
-    public void setItensSaidas(Set itensSaidas) {
-        this.itensSaidas = itensSaidas;
-    }
-
-
-
-
+ 
 }
 
 

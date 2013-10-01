@@ -23,7 +23,6 @@ public class Fornecedor  implements java.io.Serializable {
      private String cnpj;
      private String estado;
      private String contato;
-     private Set empenhos = new HashSet(0);
      static Fornecedor instancia = null;   
    
      
@@ -44,7 +43,7 @@ public class Fornecedor  implements java.io.Serializable {
         this.cnpj = cnpj;
         this.contato = contato;
     }
-    public Fornecedor(String complemento, String bairro, String numero, String nome, String cep, String cidade, String telefone, String rua, String cnpj, String estado, String contato, Set empenhos) {
+    public Fornecedor(String complemento, String bairro, String numero, String nome, String cep, String cidade, String telefone, String rua, String cnpj, String estado, String contato) {
        this.complemento = complemento;
        this.bairro = bairro;
        this.numero = numero;
@@ -56,7 +55,7 @@ public class Fornecedor  implements java.io.Serializable {
        this.cnpj = cnpj;
        this.estado = estado;
        this.contato = contato;
-       this.empenhos = empenhos;
+      
     }
    
     public Long getId() {
@@ -143,13 +142,7 @@ public class Fornecedor  implements java.io.Serializable {
     public void setContato(String contato) {
         this.contato = contato;
     }
-    public Set getEmpenhos() {
-        return this.empenhos;
-    }
-    
-    public void setEmpenhos(Set empenhos) {
-        this.empenhos = empenhos;
-    }
+   
 
 
 

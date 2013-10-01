@@ -13,7 +13,6 @@ public class Montadora  implements java.io.Serializable {
 
      private Long id;
      private String nome;
-     private Set produtos = new HashSet(0);
      static Montadora instancia = null;   
    
      
@@ -31,10 +30,7 @@ public class Montadora  implements java.io.Serializable {
     public Montadora(String nome) {
         this.nome = nome;
     }
-    public Montadora(String nome, Set produtos) {
-       this.nome = nome;
-       this.produtos = produtos;
-    }
+    
    
     public Long getId() {
         return this.id;
@@ -50,17 +46,7 @@ public class Montadora  implements java.io.Serializable {
     public void setNome(String nome) {
         this.nome = nome;
     }
-    public Set getProdutos() {
-        return this.produtos;
-    }
-    
-    public void setProdutos(Set produtos) {
-        this.produtos = produtos;
-    }
-
-
-
-
+   
 }
 
 

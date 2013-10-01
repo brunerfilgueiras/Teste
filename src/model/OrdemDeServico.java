@@ -19,8 +19,7 @@ public class OrdemDeServico  implements java.io.Serializable {
      private String observacoes;
      private String viatura;
      private String om;
-     private Set saidas = new HashSet(0);
-     static OrdemDeServico instancia = null;   
+    static OrdemDeServico instancia = null;   
    
      
      public static OrdemDeServico getInstacia(){
@@ -41,14 +40,14 @@ public class OrdemDeServico  implements java.io.Serializable {
         this.viatura = viatura;
         this.om = om;
     }
-    public OrdemDeServico(Date dataSaida, String ebPlaca, Date dataEntrada, String observacoes, String viatura, String om, Set saidas) {
+    public OrdemDeServico(Date dataSaida, String ebPlaca, Date dataEntrada, String observacoes, String viatura, String om) {
        this.dataSaida = dataSaida;
        this.ebPlaca = ebPlaca;
        this.dataEntrada = dataEntrada;
        this.observacoes = observacoes;
        this.viatura = viatura;
        this.om = om;
-       this.saidas = saidas;
+       
     }
    
     public Long getId() {
@@ -100,13 +99,7 @@ public class OrdemDeServico  implements java.io.Serializable {
     public void setOm(String om) {
         this.om = om;
     }
-    public Set getSaidas() {
-        return this.saidas;
-    }
     
-    public void setSaidas(Set saidas) {
-        this.saidas = saidas;
-    }
 
 
 

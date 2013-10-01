@@ -15,7 +15,6 @@ public class Mecanico  implements java.io.Serializable {
      private String posto;
      private String nomeGuerra;
      private String nomeCompleto;
-     private Set saidas = new HashSet(0);
      static Mecanico instancia = null;   
    
      
@@ -36,12 +35,7 @@ public class Mecanico  implements java.io.Serializable {
         this.nomeGuerra = nomeGuerra;
         this.nomeCompleto = nomeCompleto;
     }
-    public Mecanico(String posto, String nomeGuerra, String nomeCompleto, Set saidas) {
-       this.posto = posto;
-       this.nomeGuerra = nomeGuerra;
-       this.nomeCompleto = nomeCompleto;
-       this.saidas = saidas;
-    }
+    
    
     public Long getId() {
         return this.id;
@@ -71,13 +65,7 @@ public class Mecanico  implements java.io.Serializable {
     public void setNomeCompleto(String nomeCompleto) {
         this.nomeCompleto = nomeCompleto;
     }
-    public Set getSaidas() {
-        return this.saidas;
-    }
-    
-    public void setSaidas(Set saidas) {
-        this.saidas = saidas;
-    }
+
 
 
 

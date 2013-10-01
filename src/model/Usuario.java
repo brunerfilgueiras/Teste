@@ -18,8 +18,6 @@ public class Usuario  implements java.io.Serializable {
      private String perfil;
      private String posto;
      private String nomeGuerra;
-     private Set saidas = new HashSet(0);
-     private Set entradas = new HashSet(0);
      static Usuario instancia = null;   
    
      
@@ -42,17 +40,7 @@ public class Usuario  implements java.io.Serializable {
         this.posto = posto;
         this.nomeGuerra = nomeGuerra;
     }
-    public Usuario(String login, String nomeCompleto, String senha, String perfil, String posto, String nomeGuerra, Set saidas, Set entradas) {
-       this.login = login;
-       this.nomeCompleto = nomeCompleto;
-       this.senha = senha;
-       this.perfil = perfil;
-       this.posto = posto;
-       this.nomeGuerra = nomeGuerra;
-       this.saidas = saidas;
-       this.entradas = entradas;
-    }
-   
+       
     public Long getId() {
         return this.id;
     }
@@ -102,24 +90,7 @@ public class Usuario  implements java.io.Serializable {
     public void setNomeGuerra(String nomeGuerra) {
         this.nomeGuerra = nomeGuerra;
     }
-    public Set getSaidas() {
-        return this.saidas;
-    }
-    
-    public void setSaidas(Set saidas) {
-        this.saidas = saidas;
-    }
-    public Set getEntradas() {
-        return this.entradas;
-    }
-    
-    public void setEntradas(Set entradas) {
-        this.entradas = entradas;
-    }
-
-
-
-
+   
 }
 
 

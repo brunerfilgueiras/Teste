@@ -18,8 +18,6 @@ public class Produto  implements java.io.Serializable {
      private String localizacao;
      private int quantidade;
      private float valor;
-     private Set itensEntradas = new HashSet(0);
-     private Set itensSaidas = new HashSet(0);
      static Produto instancia = null;   
    
      
@@ -42,17 +40,7 @@ public class Produto  implements java.io.Serializable {
         this.quantidade = quantidade;
         this.valor = valor;
     }
-    public Produto(Montadora montadora, String numeroPeca, String descricao, String localizacao, int quantidade, float valor, Set itensEntradas, Set itensSaidas) {
-       this.montadora = montadora;
-       this.numeroPeca = numeroPeca;
-       this.descricao = descricao;
-       this.localizacao = localizacao;
-       this.quantidade = quantidade;
-       this.valor = valor;
-       this.itensEntradas = itensEntradas;
-       this.itensSaidas = itensSaidas;
-    }
-   
+      
     public Long getId() {
         return this.id;
     }
@@ -102,21 +90,7 @@ public class Produto  implements java.io.Serializable {
     public void setValor(float valor) {
         this.valor = valor;
     }
-    public Set getItensEntradas() {
-        return this.itensEntradas;
-    }
-    
-    public void setItensEntradas(Set itensEntradas) {
-        this.itensEntradas = itensEntradas;
-    }
-    public Set getItensSaidas() {
-        return this.itensSaidas;
-    }
-    
-    public void setItensSaidas(Set itensSaidas) {
-        this.itensSaidas = itensSaidas;
-    }
-
+   
 
 
 

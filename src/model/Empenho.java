@@ -40,15 +40,7 @@ public class Empenho  implements java.io.Serializable {
         this.saldo = saldo;
         this.valor = valor;
     }
-    public Empenho(Fornecedor fornecedor, String numero, Date data, float saldo, float valor, Set entradas) {
-       this.fornecedor = fornecedor;
-       this.numero = numero;
-       this.data = data;
-       this.saldo = saldo;
-       this.valor = valor;
        
-    }
-   
     public Long getId() {
         return this.id;
     }
