@@ -28,6 +28,7 @@ public class SRMView extends javax.swing.JFrame {
 
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
+        miEntrada = new javax.swing.JMenuItem();
         miSaida = new javax.swing.JMenuItem();
         miOrdemDeServico = new javax.swing.JMenuItem();
         editMenu = new javax.swing.JMenu();
@@ -37,7 +38,6 @@ public class SRMView extends javax.swing.JFrame {
         miMontadora = new javax.swing.JMenuItem();
         miProduto = new javax.swing.JMenuItem();
         miUsuario = new javax.swing.JMenuItem();
-        miEntrada = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem13 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
@@ -62,6 +62,15 @@ public class SRMView extends javax.swing.JFrame {
 
         fileMenu.setMnemonic('f');
         fileMenu.setText("Movimentação");
+
+        miEntrada.setMnemonic('e');
+        miEntrada.setText("Entrada");
+        miEntrada.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miEntradaActionPerformed(evt);
+            }
+        });
+        fileMenu.add(miEntrada);
 
         miSaida.setMnemonic('s');
         miSaida.setText("Saída");
@@ -132,15 +141,6 @@ public class SRMView extends javax.swing.JFrame {
         miUsuario.setMnemonic('t');
         miUsuario.setText("Usuário");
         editMenu.add(miUsuario);
-
-        miEntrada.setMnemonic('e');
-        miEntrada.setText("Entrada");
-        miEntrada.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                miEntradaActionPerformed(evt);
-            }
-        });
-        editMenu.add(miEntrada);
 
         menuBar.add(editMenu);
 
