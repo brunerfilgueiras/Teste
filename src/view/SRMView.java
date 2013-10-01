@@ -28,7 +28,6 @@ public class SRMView extends javax.swing.JFrame {
 
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
-        miEntrada = new javax.swing.JMenuItem();
         miSaida = new javax.swing.JMenuItem();
         miOrdemDeServico = new javax.swing.JMenuItem();
         editMenu = new javax.swing.JMenu();
@@ -38,6 +37,7 @@ public class SRMView extends javax.swing.JFrame {
         miMontadora = new javax.swing.JMenuItem();
         miProduto = new javax.swing.JMenuItem();
         miUsuario = new javax.swing.JMenuItem();
+        miEntrada = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem13 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
@@ -62,15 +62,6 @@ public class SRMView extends javax.swing.JFrame {
 
         fileMenu.setMnemonic('f');
         fileMenu.setText("Movimentação");
-
-        miEntrada.setMnemonic('e');
-        miEntrada.setText("Entrada");
-        miEntrada.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                miEntradaActionPerformed(evt);
-            }
-        });
-        fileMenu.add(miEntrada);
 
         miSaida.setMnemonic('s');
         miSaida.setText("Saída");
@@ -141,6 +132,15 @@ public class SRMView extends javax.swing.JFrame {
         miUsuario.setMnemonic('t');
         miUsuario.setText("Usuário");
         editMenu.add(miUsuario);
+
+        miEntrada.setMnemonic('e');
+        miEntrada.setText("Entrada");
+        miEntrada.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miEntradaActionPerformed(evt);
+            }
+        });
+        editMenu.add(miEntrada);
 
         menuBar.add(editMenu);
 
@@ -218,44 +218,44 @@ public class SRMView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void miEntradaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miEntradaActionPerformed
-EntradaEditView janelaEntrada = new EntradaEditView();
+EntradaSearchView janelaEntrada = new EntradaSearchView();
 janelaEntrada.setVisible(true);
         // TODO add your handling code here:
     }//GEN-LAST:event_miEntradaActionPerformed
 
     private void miSaidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miSaidaActionPerformed
-SaidaEditView janelaSaida = new SaidaEditView();
+SaidaSearchView janelaSaida = new SaidaSearchView();
 janelaSaida.setVisible(true);
 // TODO add your handling code here:
     }//GEN-LAST:event_miSaidaActionPerformed
 
     private void miOrdemDeServicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miOrdemDeServicoActionPerformed
-OrdemDeServicoEditView janelaOrdemDeServico = new OrdemDeServicoEditView();
+OrdemDeServicoSearchView janelaOrdemDeServico = new OrdemDeServicoSearchView();
 janelaOrdemDeServico.setVisible(true);// TODO add your handling code here:
     }//GEN-LAST:event_miOrdemDeServicoActionPerformed
 
     private void miEmpenhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miEmpenhoActionPerformed
-EmpenhoEditView janelaEmpenho = new EmpenhoEditView();
+EmpenhoSearchView janelaEmpenho = new EmpenhoSearchView();
 janelaEmpenho.setVisible(true);// TODO add your handling code here:
     }//GEN-LAST:event_miEmpenhoActionPerformed
 
     private void miProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miProdutoActionPerformed
-      ProdutoEditView janelaProduto = new ProdutoEditView();
+      ProdutoSearchView janelaProduto = new ProdutoSearchView();
       janelaProduto.setVisible(true);
     }//GEN-LAST:event_miProdutoActionPerformed
 
     private void miFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miFornecedorActionPerformed
-FornecedorEditView janelaFornecedor = new FornecedorEditView();
+FornecedorSearchView janelaFornecedor = new FornecedorSearchView();
 janelaFornecedor.setVisible(true);
     }//GEN-LAST:event_miFornecedorActionPerformed
 
     private void miMecanicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miMecanicoActionPerformed
-MecanicoEditView janelaMecanico = new MecanicoEditView();
+MecanicoSearchView janelaMecanico = new MecanicoSearchView();
 janelaMecanico.setVisible(true);// TODO add your handling code here:
     }//GEN-LAST:event_miMecanicoActionPerformed
 
     private void miMontadoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miMontadoraActionPerformed
-  MontadoraEditView janelaMontadora = new MontadoraEditView();
+  MontadoraSearchView janelaMontadora = new MontadoraSearchView();
   janelaMontadora.setVisible(true);// TODO addm your handling code here:
     }//GEN-LAST:event_miMontadoraActionPerformed
 
