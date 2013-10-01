@@ -8,12 +8,12 @@ package view;
  *
  * @author secinfor-04
  */
-public class MecanicoView extends javax.swing.JFrame {
+public class MecanicoEditView extends javax.swing.JFrame {
 
     /**
-     * Creates new form MecanicoView
+     * Creates new form MecanicoEditView
      */
-    public MecanicoView() {
+    public MecanicoEditView() {
         initComponents();
     }
 
@@ -138,20 +138,20 @@ public class MecanicoView extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MecanicoView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MecanicoEditView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MecanicoView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MecanicoEditView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MecanicoView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MecanicoEditView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MecanicoView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MecanicoEditView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MecanicoView().setVisible(true);
+                new MecanicoEditView().setVisible(true);
             }
         });
     }

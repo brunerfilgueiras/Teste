@@ -12,12 +12,12 @@ import java.util.logging.Logger;
  *
  * @author secinfor-04
  */
-public class FornecedorView extends javax.swing.JFrame {
+public class FornecedorEditView extends javax.swing.JFrame {
 
     /**
-     * Creates new form FornecedorView
+     * Creates new form FornecedorEditView
      */
-    public FornecedorView() {
+    public FornecedorEditView() {
         initComponents();
     }
 
@@ -271,20 +271,20 @@ public class FornecedorView extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FornecedorView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FornecedorEditView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FornecedorView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FornecedorEditView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FornecedorView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FornecedorEditView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FornecedorView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FornecedorEditView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FornecedorView().setVisible(true);
+                new FornecedorEditView().setVisible(true);
             }
         });
     }

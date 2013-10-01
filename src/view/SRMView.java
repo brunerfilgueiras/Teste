@@ -218,44 +218,44 @@ public class SRMView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void miEntradaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miEntradaActionPerformed
-EntradaView janelaEntrada = new EntradaView();
+EntradaEditView janelaEntrada = new EntradaEditView();
 janelaEntrada.setVisible(true);
         // TODO add your handling code here:
     }//GEN-LAST:event_miEntradaActionPerformed
 
     private void miSaidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miSaidaActionPerformed
-SaidaView janelaSaida = new SaidaView();
+SaidaEditView janelaSaida = new SaidaEditView();
 janelaSaida.setVisible(true);
 // TODO add your handling code here:
     }//GEN-LAST:event_miSaidaActionPerformed
 
     private void miOrdemDeServicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miOrdemDeServicoActionPerformed
-OrdemDeServicoView janelaOrdemDeServico = new OrdemDeServicoView();
+OrdemDeServicoEditView janelaOrdemDeServico = new OrdemDeServicoEditView();
 janelaOrdemDeServico.setVisible(true);// TODO add your handling code here:
     }//GEN-LAST:event_miOrdemDeServicoActionPerformed
 
     private void miEmpenhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miEmpenhoActionPerformed
-EmpenhoView janelaEmpenho = new EmpenhoView();
+EmpenhoEditView janelaEmpenho = new EmpenhoEditView();
 janelaEmpenho.setVisible(true);// TODO add your handling code here:
     }//GEN-LAST:event_miEmpenhoActionPerformed
 
     private void miProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miProdutoActionPerformed
-      ProdutoView janelaProduto = new ProdutoView();
+      ProdutoEditView janelaProduto = new ProdutoEditView();
       janelaProduto.setVisible(true);
     }//GEN-LAST:event_miProdutoActionPerformed
 
     private void miFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miFornecedorActionPerformed
-FornecedorView janelaFornecedor = new FornecedorView();
+FornecedorEditView janelaFornecedor = new FornecedorEditView();
 janelaFornecedor.setVisible(true);
     }//GEN-LAST:event_miFornecedorActionPerformed
 
     private void miMecanicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miMecanicoActionPerformed
-MecanicoView janelaMecanico = new MecanicoView();
+MecanicoEditView janelaMecanico = new MecanicoEditView();
 janelaMecanico.setVisible(true);// TODO add your handling code here:
     }//GEN-LAST:event_miMecanicoActionPerformed
 
     private void miMontadoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miMontadoraActionPerformed
-  MontadoraView janelaMontadora = new MontadoraView();
+  MontadoraEditView janelaMontadora = new MontadoraEditView();
   janelaMontadora.setVisible(true);// TODO addm your handling code here:
     }//GEN-LAST:event_miMontadoraActionPerformed
 

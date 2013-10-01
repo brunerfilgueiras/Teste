@@ -8,12 +8,12 @@ package view;
  *
  * @author secinfor-04
  */
-public class OrdemDeServicoView extends javax.swing.JFrame {
+public class OrdemDeServicoEditView extends javax.swing.JFrame {
 
     /**
-     * Creates new form OrdemDeServicoView
+     * Creates new form OrdemDeServicoEditView
      */
-    public OrdemDeServicoView() {
+    public OrdemDeServicoEditView() {
         initComponents();
     }
 
@@ -208,20 +208,20 @@ public class OrdemDeServicoView extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(OrdemDeServicoView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(OrdemDeServicoEditView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(OrdemDeServicoView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(OrdemDeServicoEditView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(OrdemDeServicoView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(OrdemDeServicoEditView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(OrdemDeServicoView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(OrdemDeServicoEditView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new OrdemDeServicoView().setVisible(true);
+                new OrdemDeServicoEditView().setVisible(true);
             }
         });
     }
