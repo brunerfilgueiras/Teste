@@ -55,18 +55,13 @@
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="jbSalvar" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="225" max="-2" attributes="0"/>
+                      <Component id="jbGravar" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jbConsultar" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jbAlterar" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jbExcluir" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jbLimpar" min="-2" max="-2" attributes="0"/>
+                      <Component id="jbSair" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="31" max="32767" attributes="0"/>
+              <EmptySpace pref="41" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -105,11 +100,8 @@
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jbSalvar" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jbConsultar" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jbAlterar" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jbExcluir" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jbLimpar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jbGravar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jbSair" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
@@ -201,30 +193,18 @@
         <Property name="text" type="java.lang.String" value="jTextField1"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jbSalvar">
+    <Component class="javax.swing.JButton" name="jbGravar">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Salvar"/>
+        <Property name="text" type="java.lang.String" value="Gravar"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jbConsultar">
+    <Component class="javax.swing.JButton" name="jbSair">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Consultar"/>
+        <Property name="text" type="java.lang.String" value="Sair"/>
       </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="jbAlterar">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Alterar"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="jbExcluir">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Excluir"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="jbLimpar">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Limpar"/>
-      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbSairActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

@@ -26,22 +26,141 @@ public class OrdemDeServicoSearchView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jtParametro = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        btConsultar = new javax.swing.JButton();
+        jbIncluir = new javax.swing.JButton();
+        btAlterar = new javax.swing.JButton();
+        btExcluir = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jtMecanicos = new javax.swing.JTable();
+        jSeparator1 = new javax.swing.JSeparator();
+        jSeparator2 = new javax.swing.JSeparator();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+
+        jtParametro.setText("jTextField1");
+        jtParametro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtParametroActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("Número:");
+
+        btConsultar.setText("Consultar");
+
+        jbIncluir.setText("Incluir");
+        jbIncluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbIncluirActionPerformed(evt);
+            }
+        });
+
+        btAlterar.setText("Alterar");
+        btAlterar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btAlterarActionPerformed(evt);
+            }
+        });
+
+        btExcluir.setText("Excluir");
+
+        jtMecanicos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "ID", "OS", "OM", "Viatura", "Data Saida", "Data Entrada"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(jtMecanicos);
+        jtMecanicos.getColumnModel().getColumn(3).setResizable(false);
+        jtMecanicos.getColumnModel().getColumn(4).setResizable(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jSeparator1)
+            .addComponent(jSeparator2)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addGap(7, 7, 7)
+                .addComponent(jtParametro, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(247, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 512, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(btConsultar)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jbIncluir)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(btAlterar)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(btExcluir)))
+                    .addContainerGap()))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(5, 5, 5)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jtParametro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(257, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(50, 50, 50)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btConsultar)
+                        .addComponent(jbIncluir)
+                        .addComponent(btAlterar)
+                        .addComponent(btExcluir))
+                    .addGap(32, 32, 32)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(14, Short.MAX_VALUE)))
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jtParametroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtParametroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtParametroActionPerformed
+
+    private void jbIncluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbIncluirActionPerformed
+
+        OrdemDeServicoEditView janelaOrdemDeServico = new OrdemDeServicoEditView();
+        janelaOrdemDeServico.setVisible(true);// TODO add your handling code here:
+    }//GEN-LAST:event_jbIncluirActionPerformed
+
+    private void btAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAlterarActionPerformed
+       OrdemDeServicoEditView janelaOrdemDeServico = new OrdemDeServicoEditView();
+        janelaOrdemDeServico.setVisible(true);
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btAlterarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,5 +197,15 @@ public class OrdemDeServicoSearchView extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btAlterar;
+    private javax.swing.JButton btConsultar;
+    private javax.swing.JButton btExcluir;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JButton jbIncluir;
+    private javax.swing.JTable jtMecanicos;
+    private javax.swing.JTextField jtParametro;
     // End of variables declaration//GEN-END:variables
 }

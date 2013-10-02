@@ -38,11 +38,8 @@ public class EmpenhoEditView extends javax.swing.JFrame {
         jtSaldo = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jtfData = new javax.swing.JFormattedTextField();
-        jbSalvar = new javax.swing.JButton();
-        jbExcluir = new javax.swing.JButton();
-        jbLimpar = new javax.swing.JButton();
-        jbConsultar = new javax.swing.JButton();
-        jbAlterar = new javax.swing.JButton();
+        jbGravar = new javax.swing.JButton();
+        jbSair = new javax.swing.JButton();
         jbIncluirFornecedor = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -71,15 +68,9 @@ public class EmpenhoEditView extends javax.swing.JFrame {
 
         jtfData.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter()));
 
-        jbSalvar.setText("Salvar");
+        jbGravar.setText("Gravar");
 
-        jbExcluir.setText("Excluir");
-
-        jbLimpar.setText("Limpar");
-
-        jbConsultar.setText("Consultar");
-
-        jbAlterar.setText("Alterar");
+        jbSair.setText("Sair");
 
         jbIncluirFornecedor.setText("Incluir Fornecedor");
 
@@ -117,15 +108,10 @@ public class EmpenhoEditView extends javax.swing.JFrame {
                                 .addComponent(jtfData, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jtFornecedor)))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jbSalvar)
+                        .addGap(225, 225, 225)
+                        .addComponent(jbGravar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jbConsultar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jbAlterar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jbExcluir)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jbLimpar)))
+                        .addComponent(jbSair)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -154,11 +140,8 @@ public class EmpenhoEditView extends javax.swing.JFrame {
                     .addComponent(jtSaldo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jbSalvar)
-                    .addComponent(jbConsultar)
-                    .addComponent(jbAlterar)
-                    .addComponent(jbExcluir)
-                    .addComponent(jbLimpar))
+                    .addComponent(jbGravar)
+                    .addComponent(jbSair))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -207,12 +190,9 @@ public class EmpenhoEditView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JButton jbAlterar;
-    private javax.swing.JButton jbConsultar;
-    private javax.swing.JButton jbExcluir;
+    private javax.swing.JButton jbGravar;
     private javax.swing.JButton jbIncluirFornecedor;
-    private javax.swing.JButton jbLimpar;
-    private javax.swing.JButton jbSalvar;
+    private javax.swing.JButton jbSair;
     private javax.swing.JTextField jtCNPJ;
     private javax.swing.JTextField jtFornecedor;
     private javax.swing.JTextField jtNumero;

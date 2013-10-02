@@ -46,11 +46,8 @@ public class SaidaEditView extends javax.swing.JFrame {
         jbIncluirItem = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jtItens = new javax.swing.JTable();
-        jbSalvar = new javax.swing.JButton();
-        jbExcluir = new javax.swing.JButton();
-        jbLimpar = new javax.swing.JButton();
-        jbConsultar = new javax.swing.JButton();
-        jbAlterar = new javax.swing.JButton();
+        jbGravar = new javax.swing.JButton();
+        jbSair = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -117,15 +114,14 @@ public class SaidaEditView extends javax.swing.JFrame {
         jtItens.getColumnModel().getColumn(2).setResizable(false);
         jtItens.getColumnModel().getColumn(2).setPreferredWidth(5);
 
-        jbSalvar.setText("Salvar");
+        jbGravar.setText("Gravar");
 
-        jbExcluir.setText("Excluir");
-
-        jbLimpar.setText("Limpar");
-
-        jbConsultar.setText("Consultar");
-
-        jbAlterar.setText("Alterar");
+        jbSair.setText("Sair");
+        jbSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbSairActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -167,15 +163,10 @@ public class SaidaEditView extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jbIncluirItem))))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jbSalvar)
+                                .addGap(225, 225, 225)
+                                .addComponent(jbGravar)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jbConsultar)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jbAlterar)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jbExcluir)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jbLimpar)))
+                                .addComponent(jbSair)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -215,17 +206,18 @@ public class SaidaEditView extends javax.swing.JFrame {
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jbSalvar)
-                    .addComponent(jbConsultar)
-                    .addComponent(jbAlterar)
-                    .addComponent(jbExcluir)
-                    .addComponent(jbLimpar))
+                    .addComponent(jbGravar)
+                    .addComponent(jbSair))
                 .addContainerGap(51, Short.MAX_VALUE))
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jbSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSairActionPerformed
+    this.dispose();        // TODO add your handling code here:
+    }//GEN-LAST:event_jbSairActionPerformed
 
     /**
      * @param args the command line arguments
@@ -271,14 +263,11 @@ public class SaidaEditView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JButton jbAlterar;
-    private javax.swing.JButton jbConsultar;
-    private javax.swing.JButton jbExcluir;
+    private javax.swing.JButton jbGravar;
     private javax.swing.JButton jbIncluirItem;
     private javax.swing.JButton jbIncluirMecanico;
     private javax.swing.JButton jbIncluirOS;
-    private javax.swing.JButton jbLimpar;
-    private javax.swing.JButton jbSalvar;
+    private javax.swing.JButton jbSair;
     private javax.swing.JTextField jtItem;
     private javax.swing.JTable jtItens;
     private javax.swing.JTextField jtMecanico;

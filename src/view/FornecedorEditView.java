@@ -4,10 +4,6 @@
  */
 package view;
 
-import java.text.ParseException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 /**
  *
  * @author secinfor-04
@@ -31,11 +27,8 @@ public class FornecedorEditView extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel4 = new javax.swing.JLabel();
-        jbLimpar = new javax.swing.JButton();
-        jbAlterar = new javax.swing.JButton();
-        jbExcluir = new javax.swing.JButton();
-        jbConsultar = new javax.swing.JButton();
-        jbSalvar = new javax.swing.JButton();
+        jbSair = new javax.swing.JButton();
+        jbGravar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -63,20 +56,14 @@ public class FornecedorEditView extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jbLimpar.setText("Limpar");
-        jbLimpar.addActionListener(new java.awt.event.ActionListener() {
+        jbSair.setText("Sair");
+        jbSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbLimparActionPerformed(evt);
+                jbSairActionPerformed(evt);
             }
         });
 
-        jbAlterar.setText("Alterar");
-
-        jbExcluir.setText("Excluir");
-
-        jbConsultar.setText("Consultar");
-
-        jbSalvar.setText("Salvar");
+        jbGravar.setText("Gravar");
 
         jLabel1.setText("Nome:");
 
@@ -152,15 +139,10 @@ public class FornecedorEditView extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jtTelefone))))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jbSalvar)
+                        .addGap(225, 225, 225)
+                        .addComponent(jbGravar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jbConsultar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jbAlterar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jbExcluir)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jbLimpar))
+                        .addComponent(jbSair))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel5)
@@ -238,11 +220,8 @@ public class FornecedorEditView extends javax.swing.JFrame {
                     .addComponent(jtCEP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jbSalvar)
-                    .addComponent(jbConsultar)
-                    .addComponent(jbAlterar)
-                    .addComponent(jbExcluir)
-                    .addComponent(jbLimpar))
+                    .addComponent(jbGravar)
+                    .addComponent(jbSair))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -250,9 +229,9 @@ public class FornecedorEditView extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jbLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLimparActionPerformed
+    private void jbSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSairActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jbLimparActionPerformed
+    }//GEN-LAST:event_jbSairActionPerformed
 
     /**
      * @param args the command line arguments
@@ -302,11 +281,8 @@ public class FornecedorEditView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JButton jbAlterar;
-    private javax.swing.JButton jbConsultar;
-    private javax.swing.JButton jbExcluir;
-    private javax.swing.JButton jbLimpar;
-    private javax.swing.JButton jbSalvar;
+    private javax.swing.JButton jbGravar;
+    private javax.swing.JButton jbSair;
     private javax.swing.JTextField jtBairro;
     private javax.swing.JFormattedTextField jtCEP;
     private javax.swing.JTextField jtCNPJ;

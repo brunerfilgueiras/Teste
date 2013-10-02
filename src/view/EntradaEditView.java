@@ -4,10 +4,6 @@
  */
 package view;
 
-import java.text.ParseException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 /**
  *
  * @author secinfor-04
@@ -50,11 +46,8 @@ public class EntradaEditView extends javax.swing.JFrame {
         jtItensEntrada = new javax.swing.JTable();
         jLabel9 = new javax.swing.JLabel();
         jtfValorTotal = new javax.swing.JFormattedTextField();
-        jbSalvar = new javax.swing.JButton();
-        jbExcluir = new javax.swing.JButton();
-        jbLimpar = new javax.swing.JButton();
-        jbConsultar = new javax.swing.JButton();
-        jbAlterar = new javax.swing.JButton();
+        jbGravar = new javax.swing.JButton();
+        Sair = new javax.swing.JButton();
 
         jLabel1.setText("jLabel1");
 
@@ -127,15 +120,9 @@ public class EntradaEditView extends javax.swing.JFrame {
 
         jtfValorTotal.setText("jFormattedTextField1");
 
-        jbSalvar.setText("Salvar");
+        jbGravar.setText("Gravar");
 
-        jbExcluir.setText("Excluir");
-
-        jbLimpar.setText("Limpar");
-
-        jbConsultar.setText("Consultar");
-
-        jbAlterar.setText("Alterar");
+        Sair.setText("Sair");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -181,15 +168,10 @@ public class EntradaEditView extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jbIncluirItem))))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jbSalvar)
+                        .addGap(225, 225, 225)
+                        .addComponent(jbGravar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jbConsultar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jbAlterar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jbExcluir)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jbLimpar)))
+                        .addComponent(Sair)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -230,11 +212,8 @@ public class EntradaEditView extends javax.swing.JFrame {
                     .addComponent(jtfValorTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jbSalvar)
-                    .addComponent(jbConsultar)
-                    .addComponent(jbAlterar)
-                    .addComponent(jbExcluir)
-                    .addComponent(jbLimpar))
+                    .addComponent(jbGravar)
+                    .addComponent(Sair))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -277,6 +256,7 @@ public class EntradaEditView extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Sair;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -287,12 +267,8 @@ public class EntradaEditView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JButton jbAlterar;
-    private javax.swing.JButton jbConsultar;
-    private javax.swing.JButton jbExcluir;
+    private javax.swing.JButton jbGravar;
     private javax.swing.JButton jbIncluirItem;
-    private javax.swing.JButton jbLimpar;
-    private javax.swing.JButton jbSalvar;
     private javax.swing.JTextField jtCNPJ;
     private javax.swing.JTextField jtEmpenho;
     private javax.swing.JTextField jtFornecedor;
