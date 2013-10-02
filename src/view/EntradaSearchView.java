@@ -141,16 +141,16 @@ public class EntradaSearchView extends javax.swing.JFrame {
 
     private void jbIncluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbIncluirActionPerformed
 
-        EmpenhoEditView janelaEmpenho = new EmpenhoEditView();
-        janelaEmpenho.setVisible(true);
+        EntradaEditView janelaEntrada = new EntradaEditView();
+        janelaEntrada.setVisible(true);
 
         // TODO add your handling code here:
     }//GEN-LAST:event_jbIncluirActionPerformed
 
     private void jbAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAlterarActionPerformed
 
-        EmpenhoEditView janelaEmpenho = new EmpenhoEditView();
-        janelaEmpenho.setVisible(true);
+        EntradaEditView janelaEntrada = new EntradaEditView();
+        janelaEntrada.setVisible(true);
 
         // TODO add your handling code here:
     }//GEN-LAST:event_jbAlterarActionPerformed
