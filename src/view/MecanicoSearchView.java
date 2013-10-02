@@ -49,8 +49,18 @@ public class MecanicoSearchView extends javax.swing.JFrame {
         btConsultar.setText("Consultar");
 
         jbIncluir.setText("Incluir");
+        jbIncluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbIncluirActionPerformed(evt);
+            }
+        });
 
         btAlterar.setText("Alterar");
+        btAlterar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btAlterarActionPerformed(evt);
+            }
+        });
 
         btExcluir.setText("Excluir");
 
@@ -80,7 +90,7 @@ public class MecanicoSearchView extends javax.swing.JFrame {
         jtMecanicos.getColumnModel().getColumn(2).setResizable(false);
         jtMecanicos.getColumnModel().getColumn(3).setResizable(false);
 
-        jcbParametro.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jcbParametro.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Nome de Guerra", "Nome Completo" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -138,6 +148,20 @@ public class MecanicoSearchView extends javax.swing.JFrame {
     private void jtParametroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtParametroActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jtParametroActionPerformed
+
+    private void jbIncluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbIncluirActionPerformed
+
+        MecanicoEditView janelaMecanico = new MecanicoEditView();
+        janelaMecanico.setVisible(true);// TODO add your handling code here:
+        
+    }//GEN-LAST:event_jbIncluirActionPerformed
+
+    private void btAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAlterarActionPerformed
+       MecanicoEditView janelaMecanico = new MecanicoEditView();
+        janelaMecanico.setVisible(true);
+        
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btAlterarActionPerformed
 
     /**
      * @param args the command line arguments

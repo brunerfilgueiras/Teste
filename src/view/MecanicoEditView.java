@@ -32,11 +32,8 @@ public class MecanicoEditView extends javax.swing.JFrame {
         jtNomeCompleto = new javax.swing.JTextField();
         jtNomeGuerra = new javax.swing.JTextField();
         jcbPosto = new javax.swing.JComboBox();
-        jbLimpar = new javax.swing.JButton();
-        jbAlterar = new javax.swing.JButton();
-        jbExcluir = new javax.swing.JButton();
-        jbConsultar = new javax.swing.JButton();
-        jbSalvar = new javax.swing.JButton();
+        jbSair = new javax.swing.JButton();
+        jbGravar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -51,16 +48,20 @@ public class MecanicoEditView extends javax.swing.JFrame {
         jtNomeGuerra.setText("jTextField1");
 
         jcbPosto.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecione um item", "Cel", "Ten Cel", "Maj", "Cap", "1º Ten", "2º Ten", "Asp", "S Ten", "1º Sgt", "2º Sgt", "3º Sgt", "Cb", "Sd" }));
+        jcbPosto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcbPostoActionPerformed(evt);
+            }
+        });
 
-        jbLimpar.setText("Limpar");
+        jbSair.setText("Sair");
+        jbSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbSairActionPerformed(evt);
+            }
+        });
 
-        jbAlterar.setText("Alterar");
-
-        jbExcluir.setText("Excluir");
-
-        jbConsultar.setText("Consultar");
-
-        jbSalvar.setText("Salvar");
+        jbGravar.setText("Gravar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -81,15 +82,10 @@ public class MecanicoEditView extends javax.swing.JFrame {
                             .addComponent(jtNomeGuerra))
                         .addGap(70, 70, 70))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jbSalvar)
+                        .addGap(225, 225, 225)
+                        .addComponent(jbGravar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jbConsultar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jbAlterar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jbExcluir)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jbLimpar)
+                        .addComponent(jbSair)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
@@ -109,17 +105,22 @@ public class MecanicoEditView extends javax.swing.JFrame {
                     .addComponent(jcbPosto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jbSalvar)
-                    .addComponent(jbConsultar)
-                    .addComponent(jbAlterar)
-                    .addComponent(jbExcluir)
-                    .addComponent(jbLimpar))
+                    .addComponent(jbGravar)
+                    .addComponent(jbSair))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jbSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSairActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbSairActionPerformed
+
+    private void jcbPostoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbPostoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jcbPostoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -131,7 +132,7 @@ public class MecanicoEditView extends javax.swing.JFrame {
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
         try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalljbSairdFeels()) {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
@@ -159,11 +160,8 @@ public class MecanicoEditView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JButton jbAlterar;
-    private javax.swing.JButton jbConsultar;
-    private javax.swing.JButton jbExcluir;
-    private javax.swing.JButton jbLimpar;
-    private javax.swing.JButton jbSalvar;
+    private javax.swing.JButton jbGravar;
+    private javax.swing.JButton jbSair;
     private javax.swing.JComboBox jcbPosto;
     private javax.swing.JTextField jtNomeCompleto;
     private javax.swing.JTextField jtNomeGuerra;
