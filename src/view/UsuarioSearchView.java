@@ -15,6 +15,12 @@ public class UsuarioSearchView extends javax.swing.JFrame {
     /**
      * Creates new form UsuarioSearchView
      */
+    public UsuarioSearchView(Usuario usuario){
+        initComponents();
+        permissao(usuario);
+        
+    }
+    
     public UsuarioSearchView() {
         initComponents();
     }
@@ -30,10 +36,10 @@ public class UsuarioSearchView extends javax.swing.JFrame {
 
         jcbParametro = new javax.swing.JComboBox();
         jtParametro = new javax.swing.JTextField();
-        btConsultar = new javax.swing.JButton();
+        jbConsultar = new javax.swing.JButton();
         jbIncluir = new javax.swing.JButton();
-        btAlterar = new javax.swing.JButton();
-        btExcluir = new javax.swing.JButton();
+        jbAlterar = new javax.swing.JButton();
+        jbExcluir = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jtUsuarios = new javax.swing.JTable();
 
@@ -41,13 +47,14 @@ public class UsuarioSearchView extends javax.swing.JFrame {
 
         jcbParametro.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Login", "Nome de Guerra", "Nome Completo", " " }));
 
+        jtParametro.setText("jTextField1");
         jtParametro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jtParametroActionPerformed(evt);
             }
         });
 
-        btConsultar.setText("Consultar");
+        jbConsultar.setText("Consultar");
 
         jbIncluir.setText("Incluir");
         jbIncluir.addActionListener(new java.awt.event.ActionListener() {
@@ -56,14 +63,14 @@ public class UsuarioSearchView extends javax.swing.JFrame {
             }
         });
 
-        btAlterar.setText("Alterar");
-        btAlterar.addActionListener(new java.awt.event.ActionListener() {
+        jbAlterar.setText("Alterar");
+        jbAlterar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btAlterarActionPerformed(evt);
+                jbAlterarActionPerformed(evt);
             }
         });
 
-        btExcluir.setText("Excluir");
+        jbExcluir.setText("Excluir");
 
         jtUsuarios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -102,13 +109,13 @@ public class UsuarioSearchView extends javax.swing.JFrame {
                             .addGap(50, 50, 50))
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 512, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(layout.createSequentialGroup()
-                            .addComponent(btConsultar)
+                            .addComponent(jbConsultar)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(jbIncluir)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(btAlterar)
+                            .addComponent(jbAlterar)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(btExcluir)))
+                            .addComponent(jbExcluir)))
                     .addContainerGap()))
         );
         layout.setVerticalGroup(
@@ -122,16 +129,17 @@ public class UsuarioSearchView extends javax.swing.JFrame {
                         .addComponent(jcbParametro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGap(22, 22, 22)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btConsultar)
+                        .addComponent(jbConsultar)
                         .addComponent(jbIncluir)
-                        .addComponent(btAlterar)
-                        .addComponent(btExcluir))
+                        .addComponent(jbAlterar)
+                        .addComponent(jbExcluir))
                     .addGap(32, 32, 32)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jtParametroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtParametroActionPerformed
@@ -145,14 +153,14 @@ public class UsuarioSearchView extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jbIncluirActionPerformed
 
-    private void btAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAlterarActionPerformed
+    private void jbAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAlterarActionPerformed
       
         
         UsuarioEditView janelaUsuario = new UsuarioEditView();
         janelaUsuario.setVisible(true);
 
         // TODO add your handling code here:
-    }//GEN-LAST:event_btAlterarActionPerformed
+    }//GEN-LAST:event_jbAlterarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -188,11 +196,17 @@ public class UsuarioSearchView extends javax.swing.JFrame {
             }
         });
     }
+    
+    private void permissao(Usuario usuario){
+      if (!usuario.getPerfil().equals("Administrador")){
+        jbExcluir.setVisible(false);
+    }
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btAlterar;
-    private javax.swing.JButton btConsultar;
-    private javax.swing.JButton btExcluir;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton jbAlterar;
+    private javax.swing.JButton jbConsultar;
+    private javax.swing.JButton jbExcluir;
     private javax.swing.JButton jbIncluir;
     private javax.swing.JComboBox jcbParametro;
     private javax.swing.JTextField jtParametro;

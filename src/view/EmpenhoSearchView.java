@@ -4,6 +4,8 @@
  */
 package view;
 
+import model.Usuario;
+
 /**
  *
  * @author secinfor-04
@@ -13,6 +15,13 @@ public class EmpenhoSearchView extends javax.swing.JFrame {
     /**
      * Creates new form EmpenhoSearchView
      */
+    public EmpenhoSearchView(Usuario usuario) {
+       initComponents();
+    permissao(usuario);
+   
+    }
+    
+    
     public EmpenhoSearchView() {
         initComponents();
     }
@@ -40,6 +49,8 @@ public class EmpenhoSearchView extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setText("Número:");
+
+        jtNumero.setText("jTextField1");
 
         jbConsultar.setText("Consultar");
 
@@ -107,7 +118,7 @@ public class EmpenhoSearchView extends javax.swing.JFrame {
                         .addComponent(jbAlterar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jbExcluir)))
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(16, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 720, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -136,6 +147,7 @@ public class EmpenhoSearchView extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbIncluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbIncluirActionPerformed
@@ -200,4 +212,10 @@ public class EmpenhoSearchView extends javax.swing.JFrame {
     private javax.swing.JButton jbIncluir;
     private javax.swing.JTextField jtNumero;
     // End of variables declaration//GEN-END:variables
+
+    private void permissao(Usuario usuario){
+      if (!usuario.getPerfil().equals("Administrador")){
+        jbExcluir.setVisible(false);
+    }
+    }
 }

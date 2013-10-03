@@ -74,7 +74,7 @@ public class SRMView extends javax.swing.JFrame {
         aboutMenuItem = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("SRM Sistema de Reserva de Material");
+        setTitle("SRM Sistema de Reserva de Materiais");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jMenu2.setText("Arquivo");
@@ -167,6 +167,11 @@ public class SRMView extends javax.swing.JFrame {
 
         miUsuario.setMnemonic('t');
         miUsuario.setText("Usuário");
+        miUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miUsuarioActionPerformed(evt);
+            }
+        });
         editMenu.add(miUsuario);
 
         menuBar.add(editMenu);
@@ -174,6 +179,11 @@ public class SRMView extends javax.swing.JFrame {
         jMenu1.setText("Relatório");
 
         miRelatorioEmpenhoDetalhado.setText("Crédito Detalhado Empenho");
+        miRelatorioEmpenhoDetalhado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miRelatorioEmpenhoDetalhadoActionPerformed(evt);
+            }
+        });
         jMenu1.add(miRelatorioEmpenhoDetalhado);
 
         miRelatorioProdutoB.setText("Entrada Produto 'B'");
@@ -212,6 +222,11 @@ public class SRMView extends javax.swing.JFrame {
         jMenu1.add(miRelatorioProdutoSaida);
 
         miRelatorioProdutoMontadora.setText("Produtos Por Montadora");
+        miRelatorioProdutoMontadora.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miRelatorioProdutoMontadoraActionPerformed(evt);
+            }
+        });
         jMenu1.add(miRelatorioProdutoMontadora);
 
         miRelatorioSaida.setText("Saída Por Período");
@@ -256,44 +271,64 @@ janelaEntrada.setVisible(true);
     }//GEN-LAST:event_miEntradaActionPerformed
 
     private void miSaidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miSaidaActionPerformed
-SaidaSearchView janelaSaida = new SaidaSearchView();
+SaidaSearchView janelaSaida = new SaidaSearchView(usuario);
 janelaSaida.setVisible(true);
 // TODO add your handling code here:
     }//GEN-LAST:event_miSaidaActionPerformed
 
     private void miOrdemDeServicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miOrdemDeServicoActionPerformed
-OrdemDeServicoSearchView janelaOrdemDeServico = new OrdemDeServicoSearchView();
+OrdemDeServicoSearchView janelaOrdemDeServico = new OrdemDeServicoSearchView(usuario);
 janelaOrdemDeServico.setVisible(true);// TODO add your handling code here:
     }//GEN-LAST:event_miOrdemDeServicoActionPerformed
 
     private void miEmpenhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miEmpenhoActionPerformed
-EmpenhoSearchView janelaEmpenho = new EmpenhoSearchView();
+EmpenhoSearchView janelaEmpenho = new EmpenhoSearchView(usuario);
 janelaEmpenho.setVisible(true);// TODO add your handling code here:
     }//GEN-LAST:event_miEmpenhoActionPerformed
 
     private void miProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miProdutoActionPerformed
-      ProdutoSearchView janelaProduto = new ProdutoSearchView();
+      ProdutoSearchView janelaProduto = new ProdutoSearchView(usuario);
       janelaProduto.setVisible(true);
     }//GEN-LAST:event_miProdutoActionPerformed
 
     private void miFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miFornecedorActionPerformed
-FornecedorSearchView janelaFornecedor = new FornecedorSearchView();
+FornecedorSearchView janelaFornecedor = new FornecedorSearchView(usuario);
 janelaFornecedor.setVisible(true);
     }//GEN-LAST:event_miFornecedorActionPerformed
 
     private void miMecanicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miMecanicoActionPerformed
-MecanicoSearchView janelaMecanico = new MecanicoSearchView();
+MecanicoSearchView janelaMecanico = new MecanicoSearchView(usuario);
 janelaMecanico.setVisible(true);// TODO add your handling code here:
     }//GEN-LAST:event_miMecanicoActionPerformed
 
     private void miMontadoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miMontadoraActionPerformed
-  MontadoraSearchView janelaMontadora = new MontadoraSearchView();
+  MontadoraSearchView janelaMontadora = new MontadoraSearchView(usuario);
   janelaMontadora.setVisible(true);// TODO addm your handling code here:
     }//GEN-LAST:event_miMontadoraActionPerformed
 
     private void miRelatorioEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miRelatorioEstoqueActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_miRelatorioEstoqueActionPerformed
+
+    private void miUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miUsuarioActionPerformed
+ UsuarioSearchView janelaUsuario = new UsuarioSearchView(usuario);
+ janelaUsuario.setVisible(true);
+ // TODO add your handling code here:
+    }//GEN-LAST:event_miUsuarioActionPerformed
+
+    private void miRelatorioProdutoMontadoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miRelatorioProdutoMontadoraActionPerformed
+RelatorioProdutoMontadoraView janelaRelatorioProdutoMontadora = new RelatorioProdutoMontadoraView();
+janelaRelatorioProdutoMontadora.setVisible(true);
+
+// TODO add your handling code here:
+    }//GEN-LAST:event_miRelatorioProdutoMontadoraActionPerformed
+
+    private void miRelatorioEmpenhoDetalhadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miRelatorioEmpenhoDetalhadoActionPerformed
+       RelatorioEmpenhoDetalhadoView janelaRelatorioEmpenhoDetalhado = new RelatorioEmpenhoDetalhadoView();
+       janelaRelatorioEmpenhoDetalhado.setVisible(true);
+       
+       // TODO add your handling code here:
+    }//GEN-LAST:event_miRelatorioEmpenhoDetalhadoActionPerformed
 
     /**
      * @param args the command line arguments

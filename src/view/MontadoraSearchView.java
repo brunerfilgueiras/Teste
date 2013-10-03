@@ -4,6 +4,8 @@
  */
 package view;
 
+import model.Usuario;
+
 /**
  *
  * @author secinfor-04
@@ -13,6 +15,12 @@ public class MontadoraSearchView extends javax.swing.JFrame {
     /**
      * Creates new form MontadoraSearchView
      */
+    
+    public MontadoraSearchView(Usuario usuario){
+        initComponents();
+        permissao(usuario);
+        
+    }
     public MontadoraSearchView() {
         initComponents();
     }
@@ -29,8 +37,8 @@ public class MontadoraSearchView extends javax.swing.JFrame {
         jtParametro = new javax.swing.JTextField();
         btConsultar = new javax.swing.JButton();
         jbIncluir = new javax.swing.JButton();
-        btAlterar = new javax.swing.JButton();
-        btExcluir = new javax.swing.JButton();
+        jbAlterar = new javax.swing.JButton();
+        jbExcluir = new javax.swing.JButton();
         jSeparator2 = new javax.swing.JSeparator();
         jScrollPane1 = new javax.swing.JScrollPane();
         jtMecanicos = new javax.swing.JTable();
@@ -39,6 +47,7 @@ public class MontadoraSearchView extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
+        jtParametro.setText("jTextField1");
         jtParametro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jtParametroActionPerformed(evt);
@@ -54,14 +63,14 @@ public class MontadoraSearchView extends javax.swing.JFrame {
             }
         });
 
-        btAlterar.setText("Alterar");
-        btAlterar.addActionListener(new java.awt.event.ActionListener() {
+        jbAlterar.setText("Alterar");
+        jbAlterar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btAlterarActionPerformed(evt);
+                jbAlterarActionPerformed(evt);
             }
         });
 
-        btExcluir.setText("Excluir");
+        jbExcluir.setText("Excluir");
 
         jtMecanicos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -109,10 +118,10 @@ public class MontadoraSearchView extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jbIncluir)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btAlterar)
+                                .addComponent(jbAlterar)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btExcluir)))
-                        .addContainerGap())))
+                                .addComponent(jbExcluir)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -127,8 +136,8 @@ public class MontadoraSearchView extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btConsultar)
                     .addComponent(jbIncluir)
-                    .addComponent(btAlterar)
-                    .addComponent(btExcluir))
+                    .addComponent(jbAlterar)
+                    .addComponent(jbExcluir))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -137,6 +146,7 @@ public class MontadoraSearchView extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jtParametroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtParametroActionPerformed
@@ -150,12 +160,12 @@ public class MontadoraSearchView extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jbIncluirActionPerformed
 
-    private void btAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAlterarActionPerformed
+    private void jbAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAlterarActionPerformed
         MontadoraEditView janelaMontadora = new MontadoraEditView();
         janelaMontadora.setVisible(true);
 
         // TODO add your handling code here:
-    }//GEN-LAST:event_btAlterarActionPerformed
+    }//GEN-LAST:event_jbAlterarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -191,14 +201,21 @@ public class MontadoraSearchView extends javax.swing.JFrame {
             }
         });
     }
+    
+    private void permissao(Usuario usuario){
+      if (!usuario.getPerfil().equals("Administrador")){
+        jbExcluir.setVisible(false);
+    }
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btAlterar;
     private javax.swing.JButton btConsultar;
-    private javax.swing.JButton btExcluir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JButton jbAlterar;
+    private javax.swing.JButton jbExcluir;
     private javax.swing.JButton jbIncluir;
     private javax.swing.JTable jtMecanicos;
     private javax.swing.JTextField jtParametro;

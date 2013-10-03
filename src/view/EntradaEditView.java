@@ -61,6 +61,14 @@ public class EntradaEditView extends javax.swing.JFrame {
 
         jLabel5.setText("CNPJ:");
 
+        jtNumero.setText("jTextField1");
+
+        jtEmpenho.setText("jTextField2");
+
+        jtFornecedor.setText("jTextField3");
+
+        jtCNPJ.setText("jTextField4");
+
         jLabel6.setText("Data:");
 
         try {
@@ -70,6 +78,10 @@ public class EntradaEditView extends javax.swing.JFrame {
         }
 
         jLabel7.setText("Saldo:");
+
+        jtfSaldo.setText("jFormattedTextField3");
+
+        jtItem.setText("jTextField5");
 
         jLabel8.setText("Produto:");
 
@@ -160,7 +172,7 @@ public class EntradaEditView extends javax.swing.JFrame {
                         .addComponent(jbGravar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Sair)))
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -206,6 +218,7 @@ public class EntradaEditView extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     /**

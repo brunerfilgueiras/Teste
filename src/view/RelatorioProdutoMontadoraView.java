@@ -30,7 +30,7 @@ public class RelatorioProdutoMontadoraView extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jbGerar = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jcbMontadora.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 

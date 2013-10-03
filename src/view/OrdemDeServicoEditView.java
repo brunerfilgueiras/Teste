@@ -66,12 +66,13 @@ public class OrdemDeServicoEditView extends javax.swing.JFrame {
 
         jLabel7.setText("Observações:");
 
+        jtOS.setText("jTextField1");
+
+        jtOM.setText("jTextField1");
+
         jtEB.setText("jTextField1");
-        jtEB.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtEBActionPerformed(evt);
-            }
-        });
+
+        jtViatura.setText("jTextField1");
 
         jtDataEntrada.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter()));
 
@@ -174,15 +175,12 @@ public class OrdemDeServicoEditView extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSairActionPerformed
 this.dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_jbSairActionPerformed
-
-    private void jtEBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtEBActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jtEBActionPerformed
 
     /**
      * @param args the command line arguments

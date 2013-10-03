@@ -71,15 +71,29 @@ public class FornecedorEditView extends javax.swing.JFrame {
 
         jLabel3.setText("Telefone:");
 
+        jtNome.setText("jTextField1");
+
+        jtCNPJ.setText("jTextField2");
+
         jLabel6.setText("Contato:");
+
+        JtContato.setText("jTextField4");
 
         jLabel5.setText("Rua:");
 
+        jtRua.setText("jTextField5");
+
         jLabel7.setText("Bairro:");
+
+        jtBairro.setText("jTextField6");
 
         jLabel8.setText("Cidade:");
 
+        jtCidade.setText("jTextField7");
+
         jLabel9.setText("Estado:");
+
+        jtEstado.setText("jTextField8");
 
         jLabel10.setText("Cep:");
 
@@ -97,7 +111,11 @@ public class FornecedorEditView extends javax.swing.JFrame {
 
         jLabel11.setText("Número:");
 
+        jtNumero.setText("jTextField3");
+
         jLabel12.setText("Complemento:");
+
+        jtComplemento.setText("jTextField9");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -208,6 +226,7 @@ public class FornecedorEditView extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSairActionPerformed

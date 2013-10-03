@@ -4,6 +4,8 @@
  */
 package view;
 
+import model.Usuario;
+
 /**
  *
  * @author secinfor-04
@@ -13,6 +15,12 @@ public class OrdemDeServicoSearchView extends javax.swing.JFrame {
     /**
      * Creates new form OrdemDeServicoSearchView
      */
+    public OrdemDeServicoSearchView(Usuario usuario){
+      initComponents();
+      
+      permissao(usuario);
+    }
+    
     public OrdemDeServicoSearchView() {
         initComponents();
     }
@@ -28,10 +36,10 @@ public class OrdemDeServicoSearchView extends javax.swing.JFrame {
 
         jtParametro = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        btConsultar = new javax.swing.JButton();
+        jbConsultar = new javax.swing.JButton();
         jbIncluir = new javax.swing.JButton();
-        btAlterar = new javax.swing.JButton();
-        btExcluir = new javax.swing.JButton();
+        jbAlterar = new javax.swing.JButton();
+        jbExcluir = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jtMecanicos = new javax.swing.JTable();
         jSeparator1 = new javax.swing.JSeparator();
@@ -39,6 +47,7 @@ public class OrdemDeServicoSearchView extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
+        jtParametro.setText("jTextField1");
         jtParametro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jtParametroActionPerformed(evt);
@@ -47,7 +56,7 @@ public class OrdemDeServicoSearchView extends javax.swing.JFrame {
 
         jLabel1.setText("Número:");
 
-        btConsultar.setText("Consultar");
+        jbConsultar.setText("Consultar");
 
         jbIncluir.setText("Incluir");
         jbIncluir.addActionListener(new java.awt.event.ActionListener() {
@@ -56,14 +65,14 @@ public class OrdemDeServicoSearchView extends javax.swing.JFrame {
             }
         });
 
-        btAlterar.setText("Alterar");
-        btAlterar.addActionListener(new java.awt.event.ActionListener() {
+        jbAlterar.setText("Alterar");
+        jbAlterar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btAlterarActionPerformed(evt);
+                jbAlterarActionPerformed(evt);
             }
         });
 
-        btExcluir.setText("Excluir");
+        jbExcluir.setText("Excluir");
 
         jtMecanicos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -106,13 +115,13 @@ public class OrdemDeServicoSearchView extends javax.swing.JFrame {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 512, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(layout.createSequentialGroup()
-                            .addComponent(btConsultar)
+                            .addComponent(jbConsultar)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(jbIncluir)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(btAlterar)
+                            .addComponent(jbAlterar)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(btExcluir)))
+                            .addComponent(jbExcluir)))
                     .addContainerGap()))
         );
         layout.setVerticalGroup(
@@ -131,16 +140,17 @@ public class OrdemDeServicoSearchView extends javax.swing.JFrame {
                 .addGroup(layout.createSequentialGroup()
                     .addGap(50, 50, 50)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btConsultar)
+                        .addComponent(jbConsultar)
                         .addComponent(jbIncluir)
-                        .addComponent(btAlterar)
-                        .addComponent(btExcluir))
+                        .addComponent(jbAlterar)
+                        .addComponent(jbExcluir))
                     .addGap(32, 32, 32)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(14, Short.MAX_VALUE)))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jtParametroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtParametroActionPerformed
@@ -153,12 +163,12 @@ public class OrdemDeServicoSearchView extends javax.swing.JFrame {
         janelaOrdemDeServico.setVisible(true);// TODO add your handling code here:
     }//GEN-LAST:event_jbIncluirActionPerformed
 
-    private void btAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAlterarActionPerformed
+    private void jbAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAlterarActionPerformed
        OrdemDeServicoEditView janelaOrdemDeServico = new OrdemDeServicoEditView();
         janelaOrdemDeServico.setVisible(true);
 
         // TODO add your handling code here:
-    }//GEN-LAST:event_btAlterarActionPerformed
+    }//GEN-LAST:event_jbAlterarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -194,14 +204,21 @@ public class OrdemDeServicoSearchView extends javax.swing.JFrame {
             }
         });
     }
+    
+    private void permissao(Usuario usuario){
+      if (!usuario.getPerfil().equals("Administrador")){
+        jbExcluir.setVisible(false);
+    }
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btAlterar;
-    private javax.swing.JButton btConsultar;
-    private javax.swing.JButton btExcluir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JButton jbAlterar;
+    private javax.swing.JButton jbConsultar;
+    private javax.swing.JButton jbExcluir;
     private javax.swing.JButton jbIncluir;
     private javax.swing.JTable jtMecanicos;
     private javax.swing.JTextField jtParametro;

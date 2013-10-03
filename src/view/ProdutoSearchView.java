@@ -4,6 +4,8 @@
  */
 package view;
 
+import model.Usuario;
+
 /**
  *
  * @author secinfor-04
@@ -13,6 +15,12 @@ public class ProdutoSearchView extends javax.swing.JFrame {
     /**
      * Creates new form ProdutoSearchView
      */
+    public ProdutoSearchView(Usuario usuario){
+        initComponents();
+       permissao(usuario);
+    }
+    
+    
     public ProdutoSearchView() {
         initComponents();
     }
@@ -28,10 +36,10 @@ public class ProdutoSearchView extends javax.swing.JFrame {
 
         jcbParametro = new javax.swing.JComboBox();
         jtParametro = new javax.swing.JTextField();
-        btExcluir = new javax.swing.JButton();
-        btAlterar = new javax.swing.JButton();
+        jbExcluir = new javax.swing.JButton();
+        jbAlterar = new javax.swing.JButton();
         jbIncluir = new javax.swing.JButton();
-        btConsultar = new javax.swing.JButton();
+        jbConsultar = new javax.swing.JButton();
         jSeparator2 = new javax.swing.JSeparator();
         jScrollPane1 = new javax.swing.JScrollPane();
         jtMecanicos = new javax.swing.JTable();
@@ -41,18 +49,19 @@ public class ProdutoSearchView extends javax.swing.JFrame {
 
         jcbParametro.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Número Ficha", "Descrição" }));
 
+        jtParametro.setText("jTextField1");
         jtParametro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jtParametroActionPerformed(evt);
             }
         });
 
-        btExcluir.setText("Excluir");
+        jbExcluir.setText("Excluir");
 
-        btAlterar.setText("Alterar");
-        btAlterar.addActionListener(new java.awt.event.ActionListener() {
+        jbAlterar.setText("Alterar");
+        jbAlterar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btAlterarActionPerformed(evt);
+                jbAlterarActionPerformed(evt);
             }
         });
 
@@ -63,7 +72,7 @@ public class ProdutoSearchView extends javax.swing.JFrame {
             }
         });
 
-        btConsultar.setText("Consultar");
+        jbConsultar.setText("Consultar");
 
         jtMecanicos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -105,14 +114,14 @@ public class ProdutoSearchView extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jtParametro, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(btConsultar)
+                                .addComponent(jbConsultar)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jbIncluir)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btAlterar)
+                                .addComponent(jbAlterar)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btExcluir)))
-                        .addContainerGap())))
+                                .addComponent(jbExcluir)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -125,10 +134,10 @@ public class ProdutoSearchView extends javax.swing.JFrame {
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btConsultar)
+                    .addComponent(jbConsultar)
                     .addComponent(jbIncluir)
-                    .addComponent(btAlterar)
-                    .addComponent(btExcluir))
+                    .addComponent(jbAlterar)
+                    .addComponent(jbExcluir))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -137,18 +146,19 @@ public class ProdutoSearchView extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jtParametroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtParametroActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jtParametroActionPerformed
 
-    private void btAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAlterarActionPerformed
+    private void jbAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAlterarActionPerformed
         ProdutoEditView janelaProduto = new ProdutoEditView();
         janelaProduto.setVisible(true);
 
         // TODO add your handling code here:
-    }//GEN-LAST:event_btAlterarActionPerformed
+    }//GEN-LAST:event_jbAlterarActionPerformed
 
     private void jbIncluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbIncluirActionPerformed
 
@@ -192,13 +202,18 @@ public class ProdutoSearchView extends javax.swing.JFrame {
             }
         });
     }
+    private void permissao(Usuario usuario){
+      if (!usuario.getPerfil().equals("Administrador")){
+        jbExcluir.setVisible(false);
+    }
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btAlterar;
-    private javax.swing.JButton btConsultar;
-    private javax.swing.JButton btExcluir;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JButton jbAlterar;
+    private javax.swing.JButton jbConsultar;
+    private javax.swing.JButton jbExcluir;
     private javax.swing.JButton jbIncluir;
     private javax.swing.JComboBox jcbParametro;
     private javax.swing.JTable jtMecanicos;

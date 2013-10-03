@@ -50,6 +50,8 @@ public class EntradaSearchView extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
+        jtNumero.setText("jTextField1");
+
         jLabel1.setText("Número:");
 
         jbConsultar.setText("Consultar");
@@ -145,6 +147,7 @@ public class EntradaSearchView extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbIncluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbIncluirActionPerformed

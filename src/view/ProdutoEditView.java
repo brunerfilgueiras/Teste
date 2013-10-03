@@ -56,11 +56,13 @@ public class ProdutoEditView extends javax.swing.JFrame {
 
         jLabel6.setText("Montadora:");
 
-        jtQuantidade.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtQuantidadeActionPerformed(evt);
-            }
-        });
+        jtNumeroPeca.setText("jTextField1");
+
+        jtDescricao.setText("jTextField2");
+
+        jtLocalizacao.setText("jTextField3");
+
+        jtQuantidade.setText("jTextField4");
 
         jLabel7.setText("Valor:");
 
@@ -148,15 +150,12 @@ public class ProdutoEditView extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSairActionPerformed
 this.dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_jbSairActionPerformed
-
-    private void jtQuantidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtQuantidadeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jtQuantidadeActionPerformed
 
     /**
      * @param args the command line arguments

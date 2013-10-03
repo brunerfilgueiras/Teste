@@ -32,11 +32,15 @@ public class RelatorioEntradaPeriodoView extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         jbGerar = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("Data Inicio:");
 
+        jtDataInicio.setText("jTextField1");
+
         jLabel2.setText("Data Final:");
+
+        jTextField1.setText("jTextField1");
 
         jbGerar.setText("Gerar");
 

@@ -32,13 +32,17 @@ public class RelatorioSaidaPeriodoview extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jtDataInicio = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jbGerar.setText("Gerar");
+
+        jTextField1.setText("jTextField1");
 
         jLabel2.setText("Data Final:");
 
         jLabel1.setText("Data Inicio:");
+
+        jtDataInicio.setText("jTextField1");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

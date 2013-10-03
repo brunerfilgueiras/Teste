@@ -4,6 +4,8 @@
  */
 package view;
 
+import model.Usuario;
+
 /**
  *
  * @author secinfor-04
@@ -13,6 +15,11 @@ public class FornecedorSearchView extends javax.swing.JFrame {
     /**
      * Creates new form FornecedorSearchView
      */
+    public FornecedorSearchView(Usuario usuario){
+        initComponents();
+        permissao(usuario);
+    }
+    
     public FornecedorSearchView() {
         initComponents();
     }
@@ -54,6 +61,8 @@ public class FornecedorSearchView extends javax.swing.JFrame {
         });
 
         jbExcluir.setText("Excluir");
+
+        jtNumero.setText("jTextField1");
 
         jbConsultar.setText("Consultar");
 
@@ -130,6 +139,7 @@ public class FornecedorSearchView extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbIncluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbIncluirActionPerformed
@@ -181,6 +191,11 @@ public class FornecedorSearchView extends javax.swing.JFrame {
                 new FornecedorSearchView().setVisible(true);
             }
         });
+    }
+    private void permissao(Usuario usuario){
+      if (!usuario.getPerfil().equals("Administrador")){
+        jbExcluir.setVisible(false);
+    }
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane1;

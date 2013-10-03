@@ -65,15 +65,17 @@ public UsuarioEditView(Usuario usuario){
 
         jLabel6.setText("Senha:");
 
+        jtNomeCompleto.setText("jTextField1");
+
+        jtNomeGuerra.setText("jTextField1");
+
         jcbPosto.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecione um item", "Cel", "Ten Cel", "Maj", "Cap", "1º Ten", "2º Ten", "Asp", "S Ten", "1º Sgt", "2º Sgt", "3º Sgt", "Cb", "Sd" }));
 
         jcbPerfil.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecione um item", "Administrator", "Garagem", "Estoquista" }));
 
-        jtLogin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtLoginActionPerformed(evt);
-            }
-        });
+        jtLogin.setText("jTextField1");
+
+        jtSenha.setText("jTextField1");
 
         jbGravar.setText("Gravar");
 
@@ -150,15 +152,12 @@ public UsuarioEditView(Usuario usuario){
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSairActionPerformed
     this.dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_jbSairActionPerformed
-
-    private void jtLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtLoginActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jtLoginActionPerformed
 
     /**
      * @param args the command line arguments
