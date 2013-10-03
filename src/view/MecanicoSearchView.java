@@ -39,7 +39,6 @@ public class MecanicoSearchView extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jtParametro.setText("jTextField1");
         jtParametro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jtParametroActionPerformed(evt);
@@ -116,7 +115,7 @@ public class MecanicoSearchView extends javax.swing.JFrame {
                         .addComponent(btAlterar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btExcluir)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap())
                     .addComponent(jSeparator2)))
         );
         layout.setVerticalGroup(
@@ -142,7 +141,6 @@ public class MecanicoSearchView extends javax.swing.JFrame {
         );
 
         pack();
-        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jtParametroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtParametroActionPerformed

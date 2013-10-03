@@ -52,17 +52,7 @@ public class EmpenhoEditView extends javax.swing.JFrame {
 
         jLabel4.setText("Valor:");
 
-        jtNumero.setText("jTextField1");
-
-        jtFornecedor.setText("jTextField2");
-
-        jtCNPJ.setText("jTextField3");
-
-        jtValor.setText("jTextField4");
-
         jLabel5.setText("Saldo:");
-
-        jtSaldo.setText("jTextField5");
 
         jLabel6.setText("Data:");
 
@@ -71,6 +61,11 @@ public class EmpenhoEditView extends javax.swing.JFrame {
         jbGravar.setText("Gravar");
 
         jbSair.setText("Sair");
+        jbSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbSairActionPerformed(evt);
+            }
+        });
 
         jbIncluirFornecedor.setText("Incluir Fornecedor");
 
@@ -146,8 +141,12 @@ public class EmpenhoEditView extends javax.swing.JFrame {
         );
 
         pack();
-        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jbSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSairActionPerformed
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_jbSairActionPerformed
 
     /**
      * @param args the command line arguments

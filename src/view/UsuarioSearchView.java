@@ -41,7 +41,6 @@ public class UsuarioSearchView extends javax.swing.JFrame {
 
         jcbParametro.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Login", "Nome de Guerra", "Nome Completo", " " }));
 
-        jtParametro.setText("jTextField1");
         jtParametro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jtParametroActionPerformed(evt);
@@ -133,7 +132,6 @@ public class UsuarioSearchView extends javax.swing.JFrame {
         );
 
         pack();
-        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jtParametroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtParametroActionPerformed

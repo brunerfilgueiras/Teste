@@ -13,7 +13,6 @@
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
-    <SyntheticProperty name="generateCenter" type="boolean" value="true"/>
   </SyntheticProperties>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
@@ -193,14 +192,8 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jtNome">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField1"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jtCNPJ">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField2"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel6">
       <Properties>
@@ -208,9 +201,6 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="JtContato">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField4"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">
       <Properties>
@@ -218,9 +208,6 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jtRua">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField5"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel7">
       <Properties>
@@ -228,9 +215,6 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jtBairro">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField6"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel8">
       <Properties>
@@ -238,9 +222,6 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jtCidade">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField7"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel9">
       <Properties>
@@ -248,9 +229,6 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jtEstado">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField8"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel10">
       <Properties>
@@ -277,9 +255,6 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jtNumero">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField3"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel12">
       <Properties>
@@ -287,9 +262,6 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jtComplemento">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField9"/>
-      </Properties>
     </Component>
   </SubComponents>
 </Form>

@@ -37,8 +37,6 @@ public class MontadoraEditView extends javax.swing.JFrame {
 
         jLabel1.setText("Nome:");
 
-        jtNome.setText("jTextField1");
-
         jLabel2.setText("Montadoras:");
 
         jcbMontadoras.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -89,7 +87,6 @@ public class MontadoraEditView extends javax.swing.JFrame {
         );
 
         pack();
-        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     /**

@@ -4,6 +4,23 @@
   <NonVisualComponents>
     <Menu class="javax.swing.JMenuBar" name="menuBar">
       <SubComponents>
+        <Menu class="javax.swing.JMenu" name="jMenu2">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Arquivo"/>
+          </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="miLogout">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Logout"/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="miSair">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Sair"/>
+              </Properties>
+            </MenuItem>
+          </SubComponents>
+        </Menu>
         <Menu class="javax.swing.JMenu" name="fileMenu">
           <Properties>
             <Property name="mnemonic" type="int" value="102"/>
@@ -101,67 +118,70 @@
             <Property name="text" type="java.lang.String" value="Relat&#xf3;rio"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem13">
+            <MenuItem class="javax.swing.JMenuItem" name="miRelatorioEmpenhoDetalhado">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Cr&#xe9;dito Detalhado Empenho"/>
               </Properties>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem3">
+            <MenuItem class="javax.swing.JMenuItem" name="miRelatorioProdutoB">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Entrada Produto &apos;B&apos;"/>
               </Properties>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem7">
+            <MenuItem class="javax.swing.JMenuItem" name="miRelatorioEntrada">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Entrada Por Per&#xed;odo"/>
               </Properties>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem9">
+            <MenuItem class="javax.swing.JMenuItem" name="miRelatorioEstoque">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Estoque Geral"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="miRelatorioEstoqueActionPerformed"/>
+              </Events>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem14">
+            <MenuItem class="javax.swing.JMenuItem" name="miRelatorioEmpenho">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Empenho"/>
               </Properties>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem12">
+            <MenuItem class="javax.swing.JMenuItem" name="miRelatorioFornecedor">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Fornecedores"/>
               </Properties>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem15">
+            <MenuItem class="javax.swing.JMenuItem" name="miRelatorioMontadora">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Montadora"/>
               </Properties>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem10">
+            <MenuItem class="javax.swing.JMenuItem" name="miRelatorioMecanico">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Mec&#xe2;nico"/>
               </Properties>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem11">
+            <MenuItem class="javax.swing.JMenuItem" name="miRelatorioOrdemDeServico">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Ordem de Servi&#xe7;o"/>
               </Properties>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem4">
+            <MenuItem class="javax.swing.JMenuItem" name="miRelatorioProdutoPeriodo">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Produto Por Per&#xed;odo"/>
               </Properties>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem5">
+            <MenuItem class="javax.swing.JMenuItem" name="miRelatorioProdutoSaida">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Produtos Por Sa&#xed;da"/>
               </Properties>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem6">
+            <MenuItem class="javax.swing.JMenuItem" name="miRelatorioProdutoMontadora">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Produtos Por Montadora"/>
               </Properties>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem8">
+            <MenuItem class="javax.swing.JMenuItem" name="miRelatorioSaida">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Sa&#xed;da Por Per&#xed;odo"/>
               </Properties>

@@ -41,8 +41,6 @@ public class EmpenhoSearchView extends javax.swing.JFrame {
 
         jLabel1.setText("Número:");
 
-        jtNumero.setText("jTextField1");
-
         jbConsultar.setText("Consultar");
 
         jbIncluir.setText("Incluir");
@@ -109,7 +107,7 @@ public class EmpenhoSearchView extends javax.swing.JFrame {
                         .addComponent(jbAlterar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jbExcluir)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(16, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 720, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -138,7 +136,6 @@ public class EmpenhoSearchView extends javax.swing.JFrame {
         );
 
         pack();
-        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbIncluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbIncluirActionPerformed

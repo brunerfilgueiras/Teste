@@ -4,6 +4,8 @@
  */
 package view;
 
+import model.Usuario;
+
 /**
  *
  * @author secinfor-04
@@ -13,6 +15,15 @@ public class EntradaSearchView extends javax.swing.JFrame {
     /**
      * Creates new form EntradaSearchView
      */
+    public EntradaSearchView(Usuario usuario){
+     initComponents();  
+     
+     permissao(usuario);
+        
+      }
+    
+    
+    
     public EntradaSearchView() {
         initComponents();
     }
@@ -38,8 +49,6 @@ public class EntradaSearchView extends javax.swing.JFrame {
         jSeparator2 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-
-        jtNumero.setText("jTextField1");
 
         jLabel1.setText("Número:");
 
@@ -136,7 +145,6 @@ public class EntradaSearchView extends javax.swing.JFrame {
         );
 
         pack();
-        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbIncluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbIncluirActionPerformed
@@ -188,6 +196,14 @@ public class EntradaSearchView extends javax.swing.JFrame {
                 new EntradaSearchView().setVisible(true);
             }
         });
+        
+       
+                
+    }
+    private void permissao(Usuario usuario){
+      if (!usuario.getPerfil().equals("Administrador")){
+        jbExcluir.setVisible(false);
+    }
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;

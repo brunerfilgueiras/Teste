@@ -55,8 +55,6 @@ public class FornecedorSearchView extends javax.swing.JFrame {
 
         jbExcluir.setText("Excluir");
 
-        jtNumero.setText("jTextField1");
-
         jbConsultar.setText("Consultar");
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -132,7 +130,6 @@ public class FornecedorSearchView extends javax.swing.JFrame {
         );
 
         pack();
-        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbIncluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbIncluirActionPerformed

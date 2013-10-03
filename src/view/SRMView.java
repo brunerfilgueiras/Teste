@@ -4,11 +4,25 @@
  */
 package view;
 
+import model.Usuario;
+
 /**
  *
  * @author secinfor-04
  */
 public class SRMView extends javax.swing.JFrame {
+
+    Usuario usuario;
+
+   public SRMView(Usuario usuario){
+       initComponents();
+       this.usuario = usuario;
+    
+    
+    permissao(usuario);
+   
+   
+   }
 
     /**
      * Creates new form SRMVeiw
@@ -27,6 +41,9 @@ public class SRMView extends javax.swing.JFrame {
     private void initComponents() {
 
         menuBar = new javax.swing.JMenuBar();
+        jMenu2 = new javax.swing.JMenu();
+        miLogout = new javax.swing.JMenuItem();
+        miSair = new javax.swing.JMenuItem();
         fileMenu = new javax.swing.JMenu();
         miEntrada = new javax.swing.JMenuItem();
         miSaida = new javax.swing.JMenuItem();
@@ -39,19 +56,19 @@ public class SRMView extends javax.swing.JFrame {
         miProduto = new javax.swing.JMenuItem();
         miUsuario = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem13 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem7 = new javax.swing.JMenuItem();
-        jMenuItem9 = new javax.swing.JMenuItem();
-        jMenuItem14 = new javax.swing.JMenuItem();
-        jMenuItem12 = new javax.swing.JMenuItem();
-        jMenuItem15 = new javax.swing.JMenuItem();
-        jMenuItem10 = new javax.swing.JMenuItem();
-        jMenuItem11 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jMenuItem5 = new javax.swing.JMenuItem();
-        jMenuItem6 = new javax.swing.JMenuItem();
-        jMenuItem8 = new javax.swing.JMenuItem();
+        miRelatorioEmpenhoDetalhado = new javax.swing.JMenuItem();
+        miRelatorioProdutoB = new javax.swing.JMenuItem();
+        miRelatorioEntrada = new javax.swing.JMenuItem();
+        miRelatorioEstoque = new javax.swing.JMenuItem();
+        miRelatorioEmpenho = new javax.swing.JMenuItem();
+        miRelatorioFornecedor = new javax.swing.JMenuItem();
+        miRelatorioMontadora = new javax.swing.JMenuItem();
+        miRelatorioMecanico = new javax.swing.JMenuItem();
+        miRelatorioOrdemDeServico = new javax.swing.JMenuItem();
+        miRelatorioProdutoPeriodo = new javax.swing.JMenuItem();
+        miRelatorioProdutoSaida = new javax.swing.JMenuItem();
+        miRelatorioProdutoMontadora = new javax.swing.JMenuItem();
+        miRelatorioSaida = new javax.swing.JMenuItem();
         helpMenu = new javax.swing.JMenu();
         contentsMenuItem = new javax.swing.JMenuItem();
         aboutMenuItem = new javax.swing.JMenuItem();
@@ -59,6 +76,16 @@ public class SRMView extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("SRM Sistema de Reserva de Material");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
+        jMenu2.setText("Arquivo");
+
+        miLogout.setText("Logout");
+        jMenu2.add(miLogout);
+
+        miSair.setText("Sair");
+        jMenu2.add(miSair);
+
+        menuBar.add(jMenu2);
 
         fileMenu.setMnemonic('f');
         fileMenu.setText("Movimentação");
@@ -146,44 +173,49 @@ public class SRMView extends javax.swing.JFrame {
 
         jMenu1.setText("Relatório");
 
-        jMenuItem13.setText("Crédito Detalhado Empenho");
-        jMenu1.add(jMenuItem13);
+        miRelatorioEmpenhoDetalhado.setText("Crédito Detalhado Empenho");
+        jMenu1.add(miRelatorioEmpenhoDetalhado);
 
-        jMenuItem3.setText("Entrada Produto 'B'");
-        jMenu1.add(jMenuItem3);
+        miRelatorioProdutoB.setText("Entrada Produto 'B'");
+        jMenu1.add(miRelatorioProdutoB);
 
-        jMenuItem7.setText("Entrada Por Período");
-        jMenu1.add(jMenuItem7);
+        miRelatorioEntrada.setText("Entrada Por Período");
+        jMenu1.add(miRelatorioEntrada);
 
-        jMenuItem9.setText("Estoque Geral");
-        jMenu1.add(jMenuItem9);
+        miRelatorioEstoque.setText("Estoque Geral");
+        miRelatorioEstoque.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miRelatorioEstoqueActionPerformed(evt);
+            }
+        });
+        jMenu1.add(miRelatorioEstoque);
 
-        jMenuItem14.setText("Empenho");
-        jMenu1.add(jMenuItem14);
+        miRelatorioEmpenho.setText("Empenho");
+        jMenu1.add(miRelatorioEmpenho);
 
-        jMenuItem12.setText("Fornecedores");
-        jMenu1.add(jMenuItem12);
+        miRelatorioFornecedor.setText("Fornecedores");
+        jMenu1.add(miRelatorioFornecedor);
 
-        jMenuItem15.setText("Montadora");
-        jMenu1.add(jMenuItem15);
+        miRelatorioMontadora.setText("Montadora");
+        jMenu1.add(miRelatorioMontadora);
 
-        jMenuItem10.setText("Mecânico");
-        jMenu1.add(jMenuItem10);
+        miRelatorioMecanico.setText("Mecânico");
+        jMenu1.add(miRelatorioMecanico);
 
-        jMenuItem11.setText("Ordem de Serviço");
-        jMenu1.add(jMenuItem11);
+        miRelatorioOrdemDeServico.setText("Ordem de Serviço");
+        jMenu1.add(miRelatorioOrdemDeServico);
 
-        jMenuItem4.setText("Produto Por Período");
-        jMenu1.add(jMenuItem4);
+        miRelatorioProdutoPeriodo.setText("Produto Por Período");
+        jMenu1.add(miRelatorioProdutoPeriodo);
 
-        jMenuItem5.setText("Produtos Por Saída");
-        jMenu1.add(jMenuItem5);
+        miRelatorioProdutoSaida.setText("Produtos Por Saída");
+        jMenu1.add(miRelatorioProdutoSaida);
 
-        jMenuItem6.setText("Produtos Por Montadora");
-        jMenu1.add(jMenuItem6);
+        miRelatorioProdutoMontadora.setText("Produtos Por Montadora");
+        jMenu1.add(miRelatorioProdutoMontadora);
 
-        jMenuItem8.setText("Saída Por Período");
-        jMenu1.add(jMenuItem8);
+        miRelatorioSaida.setText("Saída Por Período");
+        jMenu1.add(miRelatorioSaida);
 
         menuBar.add(jMenu1);
 
@@ -218,7 +250,7 @@ public class SRMView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void miEntradaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miEntradaActionPerformed
-EntradaSearchView janelaEntrada = new EntradaSearchView();
+EntradaSearchView janelaEntrada = new EntradaSearchView(usuario);
 janelaEntrada.setVisible(true);
         // TODO add your handling code here:
     }//GEN-LAST:event_miEntradaActionPerformed
@@ -259,6 +291,10 @@ janelaMecanico.setVisible(true);// TODO add your handling code here:
   janelaMontadora.setVisible(true);// TODO addm your handling code here:
     }//GEN-LAST:event_miMontadoraActionPerformed
 
+    private void miRelatorioEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miRelatorioEstoqueActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_miRelatorioEstoqueActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -285,7 +321,10 @@ janelaMecanico.setVisible(true);// TODO add your handling code here:
             java.util.logging.Logger.getLogger(SRMView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
+ 
+  
+        
+        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -293,6 +332,54 @@ janelaMecanico.setVisible(true);// TODO add your handling code here:
             }
         });
     }
+    private void permissao(Usuario usuario){      
+        switch (usuario.getPerfil()){
+       case "Garagem"   :{
+       
+       miEntrada.setVisible(false);
+       miSaida.setVisible(false);    
+       miEmpenho.setVisible(false);
+       miMontadora.setVisible(false);
+       miProduto.setVisible(false);
+       miFornecedor.setVisible(false);
+       miRelatorioEmpenho.setVisible(false);
+       miRelatorioEmpenhoDetalhado.setVisible(false);
+       miRelatorioEntrada.setVisible(false);
+       miRelatorioEstoque.setVisible(false);    
+       miRelatorioFornecedor.setVisible(false);       
+       miRelatorioMontadora.setVisible(false);       
+       miRelatorioProdutoB.setVisible(false);       
+       miRelatorioProdutoMontadora .setVisible(false);       
+       miRelatorioProdutoPeriodo.setVisible(false);        
+       miRelatorioProdutoSaida.setVisible(false);
+       miRelatorioSaida.setVisible(false); 
+               
+       break;} 
+       case "Estoquista" : {
+       
+           
+       
+       miOrdemDeServico.setVisible(false);
+       miMecanico.setVisible(false);
+       miRelatorioEmpenho.setVisible(false);
+       miRelatorioEmpenhoDetalhado.setVisible(false);
+       miRelatorioFornecedor.setVisible(false);       
+       miRelatorioProdutoB.setVisible(false);       
+       miRelatorioOrdemDeServico.setVisible(false);
+       miRelatorioMecanico.setVisible(false);
+       miFornecedor.setVisible(false);
+       miEmpenho.setVisible(false);       
+      
+           
+           
+       
+       break;}
+       default :{
+       
+       
+       }    
+   }
+  } 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem aboutMenuItem;
     private javax.swing.JMenuItem contentsMenuItem;
@@ -300,28 +387,31 @@ janelaMecanico.setVisible(true);// TODO add your handling code here:
     private javax.swing.JMenu fileMenu;
     private javax.swing.JMenu helpMenu;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenuItem jMenuItem10;
-    private javax.swing.JMenuItem jMenuItem11;
-    private javax.swing.JMenuItem jMenuItem12;
-    private javax.swing.JMenuItem jMenuItem13;
-    private javax.swing.JMenuItem jMenuItem14;
-    private javax.swing.JMenuItem jMenuItem15;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
-    private javax.swing.JMenuItem jMenuItem7;
-    private javax.swing.JMenuItem jMenuItem8;
-    private javax.swing.JMenuItem jMenuItem9;
+    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem miEmpenho;
     private javax.swing.JMenuItem miEntrada;
     private javax.swing.JMenuItem miFornecedor;
+    private javax.swing.JMenuItem miLogout;
     private javax.swing.JMenuItem miMecanico;
     private javax.swing.JMenuItem miMontadora;
     private javax.swing.JMenuItem miOrdemDeServico;
     private javax.swing.JMenuItem miProduto;
+    private javax.swing.JMenuItem miRelatorioEmpenho;
+    private javax.swing.JMenuItem miRelatorioEmpenhoDetalhado;
+    private javax.swing.JMenuItem miRelatorioEntrada;
+    private javax.swing.JMenuItem miRelatorioEstoque;
+    private javax.swing.JMenuItem miRelatorioFornecedor;
+    private javax.swing.JMenuItem miRelatorioMecanico;
+    private javax.swing.JMenuItem miRelatorioMontadora;
+    private javax.swing.JMenuItem miRelatorioOrdemDeServico;
+    private javax.swing.JMenuItem miRelatorioProdutoB;
+    private javax.swing.JMenuItem miRelatorioProdutoMontadora;
+    private javax.swing.JMenuItem miRelatorioProdutoPeriodo;
+    private javax.swing.JMenuItem miRelatorioProdutoSaida;
+    private javax.swing.JMenuItem miRelatorioSaida;
     private javax.swing.JMenuItem miSaida;
+    private javax.swing.JMenuItem miSair;
     private javax.swing.JMenuItem miUsuario;
     // End of variables declaration//GEN-END:variables
 }

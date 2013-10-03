@@ -59,14 +59,6 @@ public class SaidaEditView extends javax.swing.JFrame {
 
         jLabel3.setText("OM:");
 
-        jtNumero.setText("jTextField1");
-
-        jtMecanico.setText("jTextField2");
-
-        jtOrdemDeServico.setText("jTextField3");
-
-        jtOM.setText("jTextField4");
-
         jLabel4.setText("Observações:");
 
         jtaObservacoes.setColumns(20);
@@ -75,15 +67,11 @@ public class SaidaEditView extends javax.swing.JFrame {
 
         jLabel5.setText("Data:");
 
-        jtfData.setText("jFormattedTextField1");
-
         jbIncluirMecanico.setText("Incluir Mecânico");
 
         jbIncluirOS.setText("Incluir OS");
 
         jLabel6.setText("Produto:");
-
-        jtItem.setText("jTextField1");
 
         jbIncluirItem.setText("Incluir Item");
 
@@ -212,7 +200,6 @@ public class SaidaEditView extends javax.swing.JFrame {
         );
 
         pack();
-        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSairActionPerformed
