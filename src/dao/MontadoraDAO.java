@@ -4,6 +4,7 @@
  */
 package dao;
 
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
 import model.Montadora;
@@ -54,23 +55,23 @@ public class MontadoraDAO {
     
     
     public List listaTodas(){
-        List montadoras = null;
-        EntityManager em = PersistenceUtil.getEntityManager();
         
+        EntityManager entityManager = PersistenceUtil.getEntityManager();
+       Session session = (Session) entityManager.getDelegate();
+        
+       List<Montadora> resultado = new ArrayList<Montadora>();
         try{ 
-           
-           Session session = (Session) PersistenceUtil.getEntityManager();
-           Criteria criteria = session.createCriteria(Montadora.class) ;
-         
-           return montadoras = criteria.list();
-                               
-          
-           
+        
+            Criteria crit = session.createCriteria(Montadora.class);
+            resultado = crit.list();
+       
+          return resultado; 
         }catch(Exception e){
                    
-           
-            return  montadoras == null;
+          resultado = null;
+            return  resultado ;
         }
+        
       }   
         
        public boolean deletar(Montadora montadora){

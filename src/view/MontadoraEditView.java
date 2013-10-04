@@ -4,6 +4,10 @@
  */
 package view;
 
+import controller.MontadoraController;
+import javax.swing.JOptionPane;
+import model.Montadora;
+
 /**
  *
  * @author secinfor-04
@@ -13,6 +17,13 @@ public class MontadoraEditView extends javax.swing.JFrame {
     /**
      * Creates new form MontadoraEditView
      */
+    public MontadoraEditView(Montadora montadora) {
+        initComponents();
+        carregaDados(montadora);
+    }
+    
+    
+    
     public MontadoraEditView() {
         initComponents();
     }
@@ -46,6 +57,11 @@ public class MontadoraEditView extends javax.swing.JFrame {
         jbSair.setText("Sair");
 
         jbGravar.setText("Gravar");
+        jbGravar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbGravarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -92,6 +108,24 @@ public class MontadoraEditView extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jbGravarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbGravarActionPerformed
+Montadora montadora = Montadora.getInstacia();
+MontadoraController montadoraController = MontadoraController.getInstacia();
+       
+   montadora.setNome(jtNome.getText());
+   
+   if(montadoraController.persistir(montadora)){
+      JOptionPane.showMessageDialog(rootPane, "Montadora Gravada Com sucesso");
+      this.dispose();
+   }else{
+      JOptionPane.showMessageDialog(rootPane, "Falha ao Gravar a Montadora");
+
+   }
+   
+   
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbGravarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -126,6 +160,15 @@ public class MontadoraEditView extends javax.swing.JFrame {
             }
         });
     }
+    
+    private void carregaDados(Montadora montadora){
+        
+        jtNome.setText(montadora.getNome());
+        
+    }
+    
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

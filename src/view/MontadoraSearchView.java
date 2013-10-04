@@ -4,6 +4,11 @@
  */
 package view;
 
+import controller.MontadoraController;
+import dao.MontadoraDAO;
+import java.util.List;
+import javax.swing.JOptionPane;
+import model.Montadora;
 import model.Usuario;
 
 /**
@@ -15,10 +20,16 @@ public class MontadoraSearchView extends javax.swing.JFrame {
     /**
      * Creates new form MontadoraSearchView
      */
+    private Montadora montadora;
+   
+    
+    
     
     public MontadoraSearchView(Usuario usuario){
         initComponents();
         permissao(usuario);
+     MontadoraDAO montadoraDAO = MontadoraDAO.getInstacia();
+     List lista = montadoraDAO.listaTodas();
         
     }
     public MontadoraSearchView() {
@@ -71,6 +82,11 @@ public class MontadoraSearchView extends javax.swing.JFrame {
         });
 
         jbExcluir.setText("Excluir");
+        jbExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbExcluirActionPerformed(evt);
+            }
+        });
 
         jtMecanicos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -161,11 +177,38 @@ public class MontadoraSearchView extends javax.swing.JFrame {
     }//GEN-LAST:event_jbIncluirActionPerformed
 
     private void jbAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAlterarActionPerformed
-        MontadoraEditView janelaMontadora = new MontadoraEditView();
+        
+        long id = 1 ;
+        
+        montadora = Montadora.getInstacia();
+        montadora.setId(id);
+        montadora.setNome("teste");
+        MontadoraEditView janelaMontadora = new MontadoraEditView(montadora);
         janelaMontadora.setVisible(true);
 
         // TODO add your handling code here:
     }//GEN-LAST:event_jbAlterarActionPerformed
+
+    private void jbExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbExcluirActionPerformed
+        MontadoraController  montadoraController = MontadoraController.getInstacia();
+       
+        long id = 1 ;
+        
+        Montadora montadora1 = Montadora.getInstacia();
+        montadora1.setId(id);
+        
+        
+        if(montadoraController.deletar(montadora1)){
+            JOptionPane.showMessageDialog(rootPane, "Montadora Excluida com sucesso!");
+        }else{
+            JOptionPane.showMessageDialog(rootPane, "Falha ao Excluir a Montadora!");
+        }
+        
+        
+        
+        
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbExcluirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -202,11 +245,29 @@ public class MontadoraSearchView extends javax.swing.JFrame {
         });
     }
     
+   
     private void permissao(Usuario usuario){
       if (!usuario.getPerfil().equals("Administrador")){
         jbExcluir.setVisible(false);
     }
     }
+    /*
+    private List alimentarTabela(){
+   
+       MontadoraDAO montadoraDAO = MontadoraDAO.getInstacia();
+        List montadoras = montadoraDAO.listaTodas();
+       
+        for(){
+        
+            jtMecanicos
+        }
+        
+    }*/
+    
+    
+    
+    
+    
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btConsultar;
