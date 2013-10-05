@@ -101,11 +101,12 @@ public class LoginView extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
-        Usuario usuario = Usuario.getInstacia();
-        usuario.setPerfil("Administrador");
+        Usuario logado = Usuario.getInstacia();
+        logado.setPerfil("Administrador");
+        
         if(true){
         
-            SRMView janelaPrincipal = new SRMView(usuario);
+            SRMView janelaPrincipal = new SRMView(logado);
             janelaPrincipal.setVisible(true);
             this.dispose();
             

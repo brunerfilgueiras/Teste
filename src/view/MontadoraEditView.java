@@ -39,8 +39,6 @@ public class MontadoraEditView extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jtNome = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        jcbMontadoras = new javax.swing.JComboBox();
         jbSair = new javax.swing.JButton();
         jbGravar = new javax.swing.JButton();
 
@@ -48,13 +46,12 @@ public class MontadoraEditView extends javax.swing.JFrame {
 
         jLabel1.setText("Nome:");
 
-        jtNome.setText("jTextField1");
-
-        jLabel2.setText("Montadoras:");
-
-        jcbMontadoras.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
         jbSair.setText("Sair");
+        jbSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbSairActionPerformed(evt);
+            }
+        });
 
         jbGravar.setText("Gravar");
         jbGravar.addActionListener(new java.awt.event.ActionListener() {
@@ -69,15 +66,9 @@ public class MontadoraEditView extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jcbMontadoras, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(136, 136, 136)
@@ -93,15 +84,11 @@ public class MontadoraEditView extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(jtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jcbMontadoras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(50, 50, 50)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jbGravar)
                     .addComponent(jbSair))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
         pack();
@@ -109,22 +96,34 @@ public class MontadoraEditView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbGravarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbGravarActionPerformed
+
 Montadora montadora = Montadora.getInstacia();
 MontadoraController montadoraController = MontadoraController.getInstacia();
-       
+   if(campoObrigatorio()==null){    
    montadora.setNome(jtNome.getText());
    
    if(montadoraController.persistir(montadora)){
       JOptionPane.showMessageDialog(rootPane, "Montadora Gravada Com sucesso");
+      
+      
+      
+      
       this.dispose();
    }else{
       JOptionPane.showMessageDialog(rootPane, "Falha ao Gravar a Montadora");
 
    }
-   
+   }else{
+       JOptionPane.showMessageDialog(rootPane, campoObrigatorio(), null, 2);
+               }
    
         // TODO add your handling code here:
     }//GEN-LAST:event_jbGravarActionPerformed
+
+    private void jbSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSairActionPerformed
+        this.dispose();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbSairActionPerformed
 
     /**
      * @param args the command line arguments
@@ -161,6 +160,8 @@ MontadoraController montadoraController = MontadoraController.getInstacia();
         });
     }
     
+    
+   //carrega dados para alterar 
     private void carregaDados(Montadora montadora){
         
         jtNome.setText(montadora.getNome());
@@ -169,12 +170,25 @@ MontadoraController montadoraController = MontadoraController.getInstacia();
     
     
     
+    
+    
+    // metodo que valida Campo em Branco
+    private String campoObrigatorio(){
+        String vazio = "Campo Obrigatorio Em Branco: ";
+        if(jtNome.getText().equals("")){
+          
+            vazio = vazio + "Nome";
+            
+         return vazio ;
+        }
+        return vazio = null;
+       }
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JButton jbGravar;
     private javax.swing.JButton jbSair;
-    private javax.swing.JComboBox jcbMontadoras;
     private javax.swing.JTextField jtNome;
     // End of variables declaration//GEN-END:variables
 }

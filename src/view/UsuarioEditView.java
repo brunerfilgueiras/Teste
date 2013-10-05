@@ -4,6 +4,8 @@
  */
 package view;
 
+import controller.UsuarioController;
+import javax.swing.JOptionPane;
 import model.Usuario;
 
 /**
@@ -16,7 +18,9 @@ Usuario usuario;
      * Creates new form UsuarioEditView
      */
 public UsuarioEditView(Usuario usuario){
-    this.usuario = usuario;
+    initComponents();
+    carregaDados(usuario);
+    
 }
 
 
@@ -65,19 +69,16 @@ public UsuarioEditView(Usuario usuario){
 
         jLabel6.setText("Senha:");
 
-        jtNomeCompleto.setText("jTextField1");
-
-        jtNomeGuerra.setText("jTextField1");
-
         jcbPosto.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecione um item", "Cel", "Ten Cel", "Maj", "Cap", "1º Ten", "2º Ten", "Asp", "S Ten", "1º Sgt", "2º Sgt", "3º Sgt", "Cb", "Sd" }));
 
-        jcbPerfil.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecione um item", "Administrator", "Garagem", "Estoquista" }));
-
-        jtLogin.setText("jTextField1");
-
-        jtSenha.setText("jTextField1");
+        jcbPerfil.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecione um item", "Administrador", "Garagem", "Estoquista" }));
 
         jbGravar.setText("Gravar");
+        jbGravar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbGravarActionPerformed(evt);
+            }
+        });
 
         jbSair.setText("Sair");
         jbSair.addActionListener(new java.awt.event.ActionListener() {
@@ -159,6 +160,50 @@ public UsuarioEditView(Usuario usuario){
     this.dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_jbSairActionPerformed
 
+    private void jbGravarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbGravarActionPerformed
+    
+     UsuarioController usuarioController = UsuarioController.getInstacia();
+       
+     usuario = Usuario.getInstacia();
+       
+     
+     if(campoObrigatorio()==null){
+      usuario.setPerfil((String) jcbPerfil.getSelectedItem());
+      usuario.setPosto((String) jcbPosto.getSelectedItem());
+      usuario.setLogin(jtLogin.getText());
+      usuario.setNomeCompleto(jtNomeCompleto.getText());
+      usuario.setNomeGuerra(jtNomeGuerra.getText());
+      usuario.setSenha(jtSenha.getText()); 
+        
+        
+      
+      
+      if(usuarioController.persistir(usuario)){
+          
+          JOptionPane.showMessageDialog(jtNomeCompleto, "Usuario Gravado Com sucesso!", null, 1);
+          
+          this.dispose();
+      }else{
+          
+          JOptionPane.showMessageDialog(jtNomeCompleto, "Falha ao Salvar Usuario!!", null, 2);
+      }
+        
+     }else{  
+         
+        JOptionPane.showMessageDialog(jtNomeCompleto, campoObrigatorio(), null, 2); 
+     }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbGravarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -193,6 +238,83 @@ public UsuarioEditView(Usuario usuario){
             }
         });
     }
+    
+    
+    
+    
+    //carrega dados para alterar 
+    private void carregaDados(Usuario usuario){
+       
+     
+        jtLogin.setText(usuario.getLogin());
+        jtNomeCompleto.setText(usuario.getNomeCompleto());
+        jtNomeGuerra.setText(usuario.getNomeGuerra());
+        jtSenha.setText(usuario.getSenha());
+        jcbPerfil.setSelectedItem(usuario.getPerfil());
+        jcbPosto.setSelectedItem(usuario.getPosto());
+        
+        jtNomeCompleto.setEditable(false);
+        
+    }
+    
+    
+    
+    
+    
+    // metodo que valida Campo em Branco
+    private String campoObrigatorio(){
+       
+        String vazio = "Campo Obrigatorio Em Branco ou Não Selecionado: ";
+       boolean msg = false;
+       
+        if(jtNomeCompleto.getText().equals("")){
+          
+            vazio = vazio + "\n Nome Completo ";
+            
+        msg = true; 
+        }
+        if(jtNomeGuerra.getText().equals("")){
+          
+            vazio = vazio + "\n Nome de Guerra ";
+            
+          msg = true;
+        }
+        if(jtSenha.getText().equals("")){
+          
+            vazio = vazio + "\n Senha ";
+            
+         msg = true;
+        }
+        if(jtLogin.getText().equals("")){
+          
+            vazio = vazio + "\n Login ";
+            
+         msg = true;
+        }
+        
+        
+        if(jcbPosto.getSelectedItem().equals("Selecione um item")){
+          
+            vazio = vazio + " \n Posto/Graduação ";
+            
+         msg = true; 
+        }
+        if(jcbPerfil.getSelectedItem().equals("Selecione um item")){
+          
+            vazio = vazio + "\n Prefil ";
+            
+       msg = true;
+        }
+        
+        
+        if(msg){
+        
+            return vazio;
+        }else{
+        
+        return vazio = null;
+    }
+       }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;

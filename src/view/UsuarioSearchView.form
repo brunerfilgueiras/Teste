@@ -83,7 +83,7 @@
             <StringItem index="0" value="Login"/>
             <StringItem index="1" value="Nome de Guerra"/>
             <StringItem index="2" value="Nome Completo"/>
-            <StringItem index="3" value=" "/>
+            <StringItem index="3" value=""/>
           </StringArray>
         </Property>
       </Properties>
@@ -100,6 +100,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Consultar"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbConsultarActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jbIncluir">
       <Properties>
@@ -121,6 +124,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Excluir"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbExcluirActionPerformed"/>
+      </Events>
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane1">
       <AuxValues>

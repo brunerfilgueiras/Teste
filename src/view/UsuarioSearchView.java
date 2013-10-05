@@ -4,6 +4,11 @@
  */
 package view;
 
+import controller.UsuarioController;
+import dao.UsuarioDAO;
+import java.util.List;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import model.Usuario;
 
 /**
@@ -12,12 +17,15 @@ import model.Usuario;
  */
 public class UsuarioSearchView extends javax.swing.JFrame {
 
+     private List<Usuario> usuarios;
+     private Usuario usuario;
     /**
      * Creates new form UsuarioSearchView
      */
-    public UsuarioSearchView(Usuario usuario){
+    public UsuarioSearchView(Usuario logado){
         initComponents();
-        permissao(usuario);
+        permissao(logado);
+        carregaTabela();
         
     }
     
@@ -45,7 +53,7 @@ public class UsuarioSearchView extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jcbParametro.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Login", "Nome de Guerra", "Nome Completo", " " }));
+        jcbParametro.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Login", "Nome de Guerra", "Nome Completo", "" }));
 
         jtParametro.setText("jTextField1");
         jtParametro.addActionListener(new java.awt.event.ActionListener() {
@@ -55,6 +63,11 @@ public class UsuarioSearchView extends javax.swing.JFrame {
         });
 
         jbConsultar.setText("Consultar");
+        jbConsultar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbConsultarActionPerformed(evt);
+            }
+        });
 
         jbIncluir.setText("Incluir");
         jbIncluir.addActionListener(new java.awt.event.ActionListener() {
@@ -71,6 +84,11 @@ public class UsuarioSearchView extends javax.swing.JFrame {
         });
 
         jbExcluir.setText("Excluir");
+        jbExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbExcluirActionPerformed(evt);
+            }
+        });
 
         jtUsuarios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -150,17 +168,81 @@ public class UsuarioSearchView extends javax.swing.JFrame {
 
         UsuarioEditView janelaUsuario = new UsuarioEditView();
         janelaUsuario.setVisible(true);// TODO add your handling code here:
-
+        this.dispose();
+        
     }//GEN-LAST:event_jbIncluirActionPerformed
 
     private void jbAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAlterarActionPerformed
       
-        
-        UsuarioEditView janelaUsuario = new UsuarioEditView();
+ 
+        UsuarioEditView janelaUsuario = new UsuarioEditView(seleciona());
         janelaUsuario.setVisible(true);
-
+        this.dispose();
         // TODO add your handling code here:
     }//GEN-LAST:event_jbAlterarActionPerformed
+
+    private void jbExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbExcluirActionPerformed
+
+        
+       UsuarioController usuarioController =  UsuarioController.getInstacia();
+       
+       if(seleciona() != null){
+        
+        if(usuarioController.deletar(seleciona())){
+            JOptionPane.showMessageDialog(rootPane, "Usuario Excluido com sucesso!");
+                        
+            carregaTabela();
+        }else{
+            JOptionPane.showMessageDialog(rootPane, "Falha ao Excluir  Usuario!", null, 2);
+        }
+        }else{
+            JOptionPane.showMessageDialog(rootPane, "Usuario Não selecionado!",null , 2);
+        }
+       
+       
+        
+        
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbExcluirActionPerformed
+
+    private void jbConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbConsultarActionPerformed
+
+        
+             if(jcbParametro.getSelectedItem().equals("Login")) {  
+                usuario = Usuario.getInstacia();
+                usuario.setNomeCompleto(null);
+                usuario.setNomeGuerra(null);
+                usuario.setLogin(jtParametro.getText());
+                carregaConsulta(usuario);       
+            }else{
+                 if(jcbParametro.getSelectedItem().equals("Nome Completo")){
+                   usuario = Usuario.getInstacia();
+                   usuario.setLogin(null);
+                   usuario.setNomeGuerra(null);
+                    usuario.setNomeCompleto(jtParametro.getText());
+                    carregaConsulta(usuario);  
+                   
+                }else{
+                     usuario = Usuario.getInstacia();
+                     usuario.setLogin(null);
+                     usuario.setNomeCompleto(null);
+                    usuario.setNomeGuerra(jtParametro.getText());
+                    carregaConsulta(usuario);  
+                     
+                 }
+             } 
+                
+        
+      
+   
+       
+        
+        
+        
+          
+        
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbConsultarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -197,11 +279,69 @@ public class UsuarioSearchView extends javax.swing.JFrame {
         });
     }
     
-    private void permissao(Usuario usuario){
-      if (!usuario.getPerfil().equals("Administrador")){
+    private void permissao(Usuario logado){
+      if (!logado.getPerfil().equals("Administrador")){
         jbExcluir.setVisible(false);
     }
     }
+    
+    //metodos 
+    
+    
+    private void carregaConsulta(Usuario usuario){
+        UsuarioDAO usuarioDAO = UsuarioDAO.getInstacia();
+        usuarios = usuarioDAO.consulta(usuario);
+    
+        
+       DefaultTableModel modelo = (DefaultTableModel) jtUsuarios.getModel();
+       modelo.setNumRows(0);
+       
+       for(int i = 0; i<usuarios.size();i++){
+                        
+         modelo.addRow(new String[]{usuarios.get(i).getId().toString(), usuarios.get(i).getNomeCompleto(),
+             usuarios.get(i).getNomeGuerra(),usuarios.get(i).getPosto()});
+    
+       }
+      
+    }
+    
+    
+    
+    //caregadados na tabela
+    private void carregaTabela(){
+        UsuarioDAO usuarioDAO = UsuarioDAO.getInstacia();
+        usuarios = usuarioDAO.listaTodos();
+    
+       DefaultTableModel modelo = (DefaultTableModel) jtUsuarios.getModel();
+       modelo.setNumRows(0);
+       
+       for(int i = 0; i<usuarios.size();i++){
+         
+         usuario = usuarios.get(i);
+        
+         modelo.addRow(new String[]{usuario.getId().toString(), usuario.getNomeCompleto(), usuario.getNomeGuerra(),usuario.getPosto()});
+    
+       }
+      
+    }
+    
+    //seleciona linha e retorna um usuario
+    private Usuario seleciona(){
+    
+       int linha = jtUsuarios.getSelectedRow();
+       if(linha != -1){
+       usuario = usuarios.get(linha);
+       return usuario;
+       }else{
+        return usuario = null;
+       }
+    }     
+    
+    
+    
+    
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton jbAlterar;

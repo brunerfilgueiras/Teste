@@ -4,10 +4,60 @@
  */
 package controller;
 
+import dao.UsuarioDAO;
+import model.Usuario;
+
 /**
  *
  * @author secinfor-04
  */
 public class UsuarioController {
+  
+    
+    
+    static UsuarioController instancia = null;      
+     
+     public static UsuarioController getInstacia(){
+       if(  instancia == null){
+         return instancia = new UsuarioController();
+         } else{ 
+         return instancia;
+       }
+     }
+    
+    
+    
+   public boolean persistir(Usuario usuario){
+       
+      UsuarioDAO usuarioDAO = UsuarioDAO.getInstacia();
+    
+      return usuarioDAO.persistir(usuario);
+      
+         
+   }
+  
+ 
+   public boolean deletar(Usuario usuario){
+       
+      UsuarioDAO usuarioDAO = UsuarioDAO.getInstacia();
+    
+      return usuarioDAO.deletar(usuario);
+    
+   }
+    
+   
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
 }

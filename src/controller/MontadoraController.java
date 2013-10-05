@@ -5,7 +5,6 @@
 package controller;
 
 import dao.MontadoraDAO;
-import java.awt.List;
 import model.Montadora;
 
 /**
@@ -42,26 +41,13 @@ public class MontadoraController {
       
          
    } 
-   /*
-    public List listaTodas(){
-        
-        MontadoraDAO montadoraDAO = MontadoraDAO.getInstacia();
-        
-        
-        if(montadoraDAO.listaTodas()!=null){
-            
-        List montadoras = 
-        
-        
-        }else{
-        
-        
-        
-        return lista = null;
-        }
-        
-        
-    }
-    */
-    
+  
+  
+   
+   
+   
+   
+   
+   
+   
 }

@@ -34,7 +34,7 @@ public class Usuario implements Serializable {
     @Column(name = "id")
     private Long id;
     @Basic(optional = false)
-    @Column(name = "nome_completo")
+    @Column(name = "nomeCompleto")
     private String nomeCompleto;
     @Basic(optional = false)
     @Column(name = "senha")
@@ -46,7 +46,7 @@ public class Usuario implements Serializable {
     @Column(name = "posto")
     private String posto;
     @Basic(optional = false)
-    @Column(name = "nome_guerra")
+    @Column(name = "nomeGuerra")
     private String nomeGuerra;
     static Usuario instancia = null;      
     

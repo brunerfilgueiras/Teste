@@ -10,6 +10,8 @@ import javax.persistence.EntityManager;
 import model.Montadora;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
+import org.hibernate.criterion.MatchMode;
+import org.hibernate.criterion.Restrictions;
 import util.PersistenceUtil;
 
 /**
@@ -52,7 +54,26 @@ public class MontadoraDAO {
         
     }
    
-    
+     public List consulta(Montadora montadora){
+        
+        EntityManager entityManager = PersistenceUtil.getEntityManager();
+       Session session = (Session) entityManager.getDelegate();
+        
+       List<Montadora> resultado = new ArrayList<Montadora>();
+        try{ 
+        
+            Criteria crit = session.createCriteria(Montadora.class);
+            crit.add(Restrictions.ilike("nome", montadora.getNome(), MatchMode.ANYWHERE));
+            resultado = crit.list();
+       
+          return resultado; 
+        }catch(Exception e){
+                   
+          resultado = null;
+            return  resultado ;
+        }
+        
+      }   
     
     public List listaTodas(){
         

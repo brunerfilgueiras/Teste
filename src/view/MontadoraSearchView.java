@@ -8,6 +8,7 @@ import controller.MontadoraController;
 import dao.MontadoraDAO;
 import java.util.List;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import model.Montadora;
 import model.Usuario;
 
@@ -21,15 +22,17 @@ public class MontadoraSearchView extends javax.swing.JFrame {
      * Creates new form MontadoraSearchView
      */
     private Montadora montadora;
+    private List<Montadora> montadoras;
+    
    
     
-    
-    
-    public MontadoraSearchView(Usuario usuario){
+    public MontadoraSearchView(Usuario logado){
         initComponents();
-        permissao(usuario);
-     MontadoraDAO montadoraDAO = MontadoraDAO.getInstacia();
-     List lista = montadoraDAO.listaTodas();
+        permissao(logado);
+        carregaTabela();
+        
+     //MontadoraDAO montadoraDAO = MontadoraDAO.getInstacia();
+   //  List lista = montadoraDAO.listaTodas();
         
     }
     public MontadoraSearchView() {
@@ -58,7 +61,6 @@ public class MontadoraSearchView extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jtParametro.setText("jTextField1");
         jtParametro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jtParametroActionPerformed(evt);
@@ -66,6 +68,11 @@ public class MontadoraSearchView extends javax.swing.JFrame {
         });
 
         btConsultar.setText("Consultar");
+        btConsultar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btConsultarActionPerformed(evt);
+            }
+        });
 
         jbIncluir.setText("Incluir");
         jbIncluir.addActionListener(new java.awt.event.ActionListener() {
@@ -90,10 +97,7 @@ public class MontadoraSearchView extends javax.swing.JFrame {
 
         jtMecanicos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+
             },
             new String [] {
                 "ID", "Nome"
@@ -173,35 +177,39 @@ public class MontadoraSearchView extends javax.swing.JFrame {
 
         MontadoraEditView janelaMontadora = new MontadoraEditView();
         janelaMontadora.setVisible(true);// TODO add your handling code here:
-
+        this.dispose();
+        
     }//GEN-LAST:event_jbIncluirActionPerformed
 
     private void jbAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAlterarActionPerformed
-        
-        long id = 1 ;
-        
-        montadora = Montadora.getInstacia();
-        montadora.setId(id);
-        montadora.setNome("teste");
-        MontadoraEditView janelaMontadora = new MontadoraEditView(montadora);
+        if(seleciona() != null){       
+        MontadoraEditView janelaMontadora = new MontadoraEditView(seleciona());
         janelaMontadora.setVisible(true);
-
+        this.dispose();
+        
+        
+        }else{
+            JOptionPane.showMessageDialog(rootPane, "Montadora Não selecionada!");
+        }
+        
         // TODO add your handling code here:
     }//GEN-LAST:event_jbAlterarActionPerformed
 
     private void jbExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbExcluirActionPerformed
         MontadoraController  montadoraController = MontadoraController.getInstacia();
-       
-        long id = 1 ;
-        
-        Montadora montadora1 = Montadora.getInstacia();
-        montadora1.setId(id);
         
         
-        if(montadoraController.deletar(montadora1)){
+        if(seleciona() != null){
+        
+        if(montadoraController.deletar(seleciona())){
             JOptionPane.showMessageDialog(rootPane, "Montadora Excluida com sucesso!");
+                        
+            carregaTabela();
         }else{
             JOptionPane.showMessageDialog(rootPane, "Falha ao Excluir a Montadora!");
+        }
+        }else{
+            JOptionPane.showMessageDialog(rootPane, "Montadora Não selecionada!");
         }
         
         
@@ -209,6 +217,18 @@ public class MontadoraSearchView extends javax.swing.JFrame {
         
         // TODO add your handling code here:
     }//GEN-LAST:event_jbExcluirActionPerformed
+
+    private void btConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsultarActionPerformed
+  if(!jtParametro.getText().equals("")){
+     MontadoraDAO montadoraDAO = MontadoraDAO.getInstacia();
+
+     montadora.setNome(jtParametro.getText());
+
+carregaConsulta(montadora);
+  }else{carregaTabela();}
+
+// TODO add your handling code here:
+    }//GEN-LAST:event_btConsultarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -245,12 +265,62 @@ public class MontadoraSearchView extends javax.swing.JFrame {
         });
     }
     
-   
+   //valida a permissao do usuario
     private void permissao(Usuario usuario){
       if (!usuario.getPerfil().equals("Administrador")){
         jbExcluir.setVisible(false);
     }
     }
+    
+    //carrega dados na table    
+    private void carregaConsulta(Montadora montadora){
+        MontadoraDAO montadoraDAO = MontadoraDAO.getInstacia();
+        montadoras = montadoraDAO.consulta(montadora);
+    Montadora resultado;
+        
+       DefaultTableModel modelo = (DefaultTableModel) jtMecanicos.getModel();
+       modelo.setNumRows(0);
+       
+       for(int i = 0; i<montadoras.size();i++){
+         
+         resultado = montadoras.get(i);
+        
+         modelo.addRow(new String[]{resultado.getId().toString(), resultado.getNome()});
+    
+       }
+      
+    }
+    //carrega dados na table    
+    private void carregaTabela(){
+        MontadoraDAO montadoraDAO = MontadoraDAO.getInstacia();
+        montadoras = montadoraDAO.listaTodas();
+    
+       DefaultTableModel modelo = (DefaultTableModel) jtMecanicos.getModel();
+       modelo.setNumRows(0);
+       
+       for(int i = 0; i<montadoras.size();i++){
+         
+         montadora = montadoras.get(i);
+        
+         modelo.addRow(new String[]{montadora.getId().toString(), montadora.getNome()});
+    
+       }
+      
+    }
+    
+   // seleciona linha da tabela
+     private Montadora seleciona(){
+    
+       int linha = jtMecanicos.getSelectedRow();
+       if(linha != -1){
+       montadora = montadoras.get(linha);
+       return montadora;
+       }else{
+        return montadora = null;
+       }
+    }     
+    
+    
     /*
     private List alimentarTabela(){
    
