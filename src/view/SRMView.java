@@ -79,9 +79,11 @@ public class SRMView extends javax.swing.JFrame {
 
         jMenu2.setText("Arquivo");
 
+        miLogout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Logout.png"))); // NOI18N
         miLogout.setText("Logout");
         jMenu2.add(miLogout);
 
+        miSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Warning.png"))); // NOI18N
         miSair.setText("Sair");
         jMenu2.add(miSair);
 
@@ -237,10 +239,12 @@ public class SRMView extends javax.swing.JFrame {
         helpMenu.setMnemonic('h');
         helpMenu.setText("Help");
 
+        contentsMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/FAQ.png"))); // NOI18N
         contentsMenuItem.setMnemonic('c');
         contentsMenuItem.setText("Contents");
         helpMenu.add(contentsMenuItem);
 
+        aboutMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Display.png"))); // NOI18N
         aboutMenuItem.setMnemonic('a');
         aboutMenuItem.setText("About");
         helpMenu.add(aboutMenuItem);
@@ -261,7 +265,6 @@ public class SRMView extends javax.swing.JFrame {
         );
 
         pack();
-        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void miEntradaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miEntradaActionPerformed
