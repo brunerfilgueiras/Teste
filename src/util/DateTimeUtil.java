@@ -131,7 +131,7 @@ public class DateTimeUtil {
         return calendar.getTime();
     }
 
-    public static DateTimeUtil getInstance() {
+    public static DateTimeUtil getInstancia() {
         if (instance == null) {
             instance = new DateTimeUtil();
         }
