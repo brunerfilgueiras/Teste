@@ -34,7 +34,7 @@ public class UsuarioDAO {
     public boolean persistir (Usuario usuario){
    
         
-        EntityManager em = PersistenceUtil.getEntityManager();
+        EntityManager em =  PersistenceUtil.getEntityManager();
     try{
         em.getTransaction().begin();
            
@@ -111,7 +111,9 @@ public class UsuarioDAO {
     
     
     
-    
+    public boolean login (){
+        return true;
+    }
     
     
     
