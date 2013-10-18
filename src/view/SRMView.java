@@ -4,6 +4,7 @@
  */
 package view;
 
+import javax.swing.JFrame;
 import model.Usuario;
 
 /**
@@ -40,6 +41,23 @@ public class SRMView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenu3 = new javax.swing.JMenu();
+        jTabbedPane2 = new javax.swing.JTabbedPane();
+        jPanel7 = new javax.swing.JPanel();
+        jButton6 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
+        jTabbedPane3 = new javax.swing.JTabbedPane();
+        jTabbedPane4 = new javax.swing.JTabbedPane();
+        jTabbedPane5 = new javax.swing.JTabbedPane();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jPanel1 = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
         menuBar = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
         miLogout = new javax.swing.JMenuItem();
@@ -73,9 +91,126 @@ public class SRMView extends javax.swing.JFrame {
         contentsMenuItem = new javax.swing.JMenuItem();
         aboutMenuItem = new javax.swing.JMenuItem();
 
+        jMenu3.setText("jMenu3");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("SRM Sistema de Reserva de Materiais");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setResizable(false);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                maximizado(evt);
+            }
+        });
+
+        jTabbedPane2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Logout.png"))); // NOI18N
+        jButton6.setText("Logout");
+        jButton6.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jButton6.setFocusPainted(false);
+        jButton6.setPreferredSize(new java.awt.Dimension(75, 25));
+
+        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/house_go.png"))); // NOI18N
+        jButton7.setText("Sair");
+        jButton7.setBorder(null);
+        jButton7.setFocusPainted(false);
+        jButton7.setPreferredSize(new java.awt.Dimension(75, 25));
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+
+        jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(463, Short.MAX_VALUE))
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSeparator1)
+                    .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, 62, Short.MAX_VALUE)
+                    .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+
+        jTabbedPane2.addTab("Arquivo", jPanel7);
+        jTabbedPane2.addTab("Movimentação", jTabbedPane3);
+        jTabbedPane2.addTab("Cadastro", jTabbedPane4);
+        jTabbedPane2.addTab("Relatórios", jTabbedPane5);
+        jTabbedPane2.addTab("Help", jTabbedPane1);
+
+        jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/coins_add.png"))); // NOI18N
+        jButton1.setToolTipText("Novo empenho");
+
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/basket_add.png"))); // NOI18N
+        jButton2.setToolTipText("Novo fornecedor");
+
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/user_add.png"))); // NOI18N
+        jButton3.setToolTipText("Novo mecânico");
+
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/car_add.png"))); // NOI18N
+        jButton4.setToolTipText("Nova montadora");
+
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/package_add.png"))); // NOI18N
+        jButton5.setToolTipText("Novo produto");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton1)
+                    .addComponent(jButton2)
+                    .addComponent(jButton3)
+                    .addComponent(jButton4)
+                    .addComponent(jButton5))
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton5)
+                .addContainerGap(102, Short.MAX_VALUE))
+        );
+
+        jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
 
         jMenu2.setText("Arquivo");
 
@@ -257,81 +392,109 @@ public class SRMView extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 800, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTabbedPane2)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 578, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
-        pack();
+        java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
+        setBounds((screenSize.width-682)/2, (screenSize.height-458)/2, 682, 458);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void miEntradaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miEntradaActionPerformed
-EntradaSearchView janelaEntrada = new EntradaSearchView(usuario);
-janelaEntrada.setVisible(true);
+    private void miRelatorioProdutoMontadoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miRelatorioProdutoMontadoraActionPerformed
+        RelatorioProdutoMontadoraView janelaRelatorioProdutoMontadora = new RelatorioProdutoMontadoraView();
+        janelaRelatorioProdutoMontadora.setVisible(true);
+
         // TODO add your handling code here:
-    }//GEN-LAST:event_miEntradaActionPerformed
-
-    private void miSaidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miSaidaActionPerformed
-SaidaSearchView janelaSaida = new SaidaSearchView(usuario);
-janelaSaida.setVisible(true);
-// TODO add your handling code here:
-    }//GEN-LAST:event_miSaidaActionPerformed
-
-    private void miOrdemDeServicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miOrdemDeServicoActionPerformed
-OrdemDeServicoSearchView janelaOrdemDeServico = new OrdemDeServicoSearchView(usuario);
-janelaOrdemDeServico.setVisible(true);// TODO add your handling code here:
-    }//GEN-LAST:event_miOrdemDeServicoActionPerformed
-
-    private void miEmpenhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miEmpenhoActionPerformed
-EmpenhoSearchView janelaEmpenho = new EmpenhoSearchView(usuario);
-janelaEmpenho.setVisible(true);// TODO add your handling code here:
-    }//GEN-LAST:event_miEmpenhoActionPerformed
-
-    private void miProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miProdutoActionPerformed
-      ProdutoSearchView janelaProduto = new ProdutoSearchView(usuario);
-      janelaProduto.setVisible(true);
-    }//GEN-LAST:event_miProdutoActionPerformed
-
-    private void miFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miFornecedorActionPerformed
-FornecedorSearchView janelaFornecedor = new FornecedorSearchView(usuario);
-janelaFornecedor.setVisible(true);
-    }//GEN-LAST:event_miFornecedorActionPerformed
-
-    private void miMecanicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miMecanicoActionPerformed
-MecanicoSearchView janelaMecanico = new MecanicoSearchView(usuario);
-janelaMecanico.setVisible(true);// TODO add your handling code here:
-    }//GEN-LAST:event_miMecanicoActionPerformed
-
-    private void miMontadoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miMontadoraActionPerformed
-  MontadoraSearchView janelaMontadora = new MontadoraSearchView(usuario);
-  janelaMontadora.setVisible(true);// TODO addm your handling code here:
-    }//GEN-LAST:event_miMontadoraActionPerformed
+    }//GEN-LAST:event_miRelatorioProdutoMontadoraActionPerformed
 
     private void miRelatorioEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miRelatorioEstoqueActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_miRelatorioEstoqueActionPerformed
 
+    private void miRelatorioEmpenhoDetalhadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miRelatorioEmpenhoDetalhadoActionPerformed
+        RelatorioEmpenhoDetalhadoView janelaRelatorioEmpenhoDetalhado = new RelatorioEmpenhoDetalhadoView();
+        janelaRelatorioEmpenhoDetalhado.setVisible(true);
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_miRelatorioEmpenhoDetalhadoActionPerformed
+
     private void miUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miUsuarioActionPerformed
- UsuarioSearchView janelaUsuario = new UsuarioSearchView(usuario);
- janelaUsuario.setVisible(true);
- // TODO add your handling code here:
+        UsuarioSearchView janelaUsuario = new UsuarioSearchView(usuario);
+        janelaUsuario.setVisible(true);
+        // TODO add your handling code here:
     }//GEN-LAST:event_miUsuarioActionPerformed
 
-    private void miRelatorioProdutoMontadoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miRelatorioProdutoMontadoraActionPerformed
-RelatorioProdutoMontadoraView janelaRelatorioProdutoMontadora = new RelatorioProdutoMontadoraView();
-janelaRelatorioProdutoMontadora.setVisible(true);
+    private void miProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miProdutoActionPerformed
+        ProdutoSearchView janelaProduto = new ProdutoSearchView(usuario);
+        janelaProduto.setVisible(true);
+    }//GEN-LAST:event_miProdutoActionPerformed
 
-// TODO add your handling code here:
-    }//GEN-LAST:event_miRelatorioProdutoMontadoraActionPerformed
+    private void miMontadoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miMontadoraActionPerformed
+        MontadoraSearchView janelaMontadora = new MontadoraSearchView(usuario);
+        janelaMontadora.setVisible(true);// TODO addm your handling code here:
+    }//GEN-LAST:event_miMontadoraActionPerformed
 
-    private void miRelatorioEmpenhoDetalhadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miRelatorioEmpenhoDetalhadoActionPerformed
-       RelatorioEmpenhoDetalhadoView janelaRelatorioEmpenhoDetalhado = new RelatorioEmpenhoDetalhadoView();
-       janelaRelatorioEmpenhoDetalhado.setVisible(true);
+    private void miMecanicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miMecanicoActionPerformed
+        MecanicoSearchView janelaMecanico = new MecanicoSearchView(usuario);
+        janelaMecanico.setVisible(true);// TODO add your handling code here:
+    }//GEN-LAST:event_miMecanicoActionPerformed
+
+    private void miFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miFornecedorActionPerformed
+        FornecedorSearchView janelaFornecedor = new FornecedorSearchView(usuario);
+        janelaFornecedor.setVisible(true);
+    }//GEN-LAST:event_miFornecedorActionPerformed
+
+    private void miEmpenhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miEmpenhoActionPerformed
+        EmpenhoSearchView janelaEmpenho = new EmpenhoSearchView(usuario);
+        janelaEmpenho.setVisible(true);// TODO add your handling code here:
+    }//GEN-LAST:event_miEmpenhoActionPerformed
+
+    private void miOrdemDeServicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miOrdemDeServicoActionPerformed
+        OrdemDeServicoSearchView janelaOrdemDeServico = new OrdemDeServicoSearchView(usuario);
+        janelaOrdemDeServico.setVisible(true);// TODO add your handling code here:
+    }//GEN-LAST:event_miOrdemDeServicoActionPerformed
+
+    private void miSaidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miSaidaActionPerformed
+        SaidaSearchView janelaSaida = new SaidaSearchView(usuario);
+        janelaSaida.setVisible(true);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_miSaidaActionPerformed
+
+    private void miEntradaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miEntradaActionPerformed
+        EntradaSearchView janelaEntrada = new EntradaSearchView(usuario);
+        janelaEntrada.setVisible(true);
+        
+        
+        // TODO add your handling code here:
+    }//GEN-LAST:event_miEntradaActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void maximizado(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_maximizado
+        // TODO add your handling code here:
        
-       // TODO add your handling code here:
-    }//GEN-LAST:event_miRelatorioEmpenhoDetalhadoActionPerformed
+    }//GEN-LAST:event_maximizado
 
     /**
      * @param args the command line arguments
@@ -424,8 +587,25 @@ janelaRelatorioProdutoMontadora.setVisible(true);
     private javax.swing.JMenu editMenu;
     private javax.swing.JMenu fileMenu;
     private javax.swing.JMenu helpMenu;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTabbedPane jTabbedPane2;
+    private javax.swing.JTabbedPane jTabbedPane3;
+    private javax.swing.JTabbedPane jTabbedPane4;
+    private javax.swing.JTabbedPane jTabbedPane5;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem miEmpenho;
     private javax.swing.JMenuItem miEntrada;
